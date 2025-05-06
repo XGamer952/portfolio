@@ -3,91 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pacific Northwest X-Ray Inc.</title>
+    <title>Xavier Dargan Portfolio</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .nav-buttons {
+        gap: 1rem;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div class="top-bar">
-        <a href="#" class="logo-container">
-          <img
-            class="logo"
-            src="assets/logo.png"
-            alt="Pacific Northwest X-Ray Inc."
-          />
-          <span
-            ><span>Pacific</span><span>Northwest</span
-            ><span>X-Ray Inc.</span></span
-          >
-        </a>
-        <div class="search-bar">
-          <input type="text" placeholder="Search products..." />
-          <button>🔍</button>
+      <a href="index.html"
+        ><img src="assets/x-logo.png" alt="Home Logo" class="logo"
+      /></a>
+      <nav class="header-right">
+        <div class="nav-buttons">
+          <button class="btn-green">Software</button>
+          <button class="btn-green">Design</button>
+          <button class="btn-green">Engineering</button>
+          <button class="btn-green">Music</button>
+          <button class="btn-blue">About</button>
+          <button class="btn-red" onclick="window.open('assets/resume.pdf')">
+            Résumé
+          </button>
         </div>
-        <a href="#" class="cart-icon">
-          <img src="assets/cart.png" alt="Shopping Cart" />
-        </a>
-      </div>
+        <div class="hamburger-menu">
+          <button id="hamburger-toggle">☰</button>
+          <div id="dropdown-menu">
+            <button class="btn-green">Software</button>
+            <button class="btn-green">Design</button>
+            <button class="btn-green">Engineering</button>
+            <button class="btn-green">Music</button>
+            <button class="btn-blue">About</button>
+            <button class="btn-red" onclick="window.open('assets/resume.pdf')">
+              Résumé
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <nav class="category-bar">
-      <a href="#">Equipment</a>
-      <a href="#">Accessories</a>
-      <a href="#">Supplies</a>
-      <a href="#">Parts</a>
-    </nav>
+    <section class="intro">
+      <h1 class="intro-heading">
+        Hey! My name is
+        <span class="xavier-glow accessible-glow">Xavier Dargan</span>,<br />
+        and welcome to my
+        <span class="wonder-glow accessible-glow">world of wonder</span>!
+      </h1>
 
-    <section class="hero">
-      <h1>Pacific Northwest X-Ray Inc.</h1>
-      <div class="buttons">
-        <button>Browse Products</button>
-        <button>Contact Us</button>
+      <div class="bio-text">
+        <p>
+          I am a <strong>software developer engineer</strong> with a strong
+          passion for the <strong>arts</strong> and <strong>design</strong>.
+          Creativity and curiosity drive me to explore all aspects of my
+          potential, interweaving my unique experiences and skills to create
+          experiences and products infused with ingenuity, imagination, and most
+          importantly, <strong>fun!</strong>
+        </p>
+        <p>
+          Currently studying <strong>Computer Science</strong> and
+          <strong>Music</strong> at <strong>Brown University</strong>.<br />
+          Currently employed at <strong>Amazon & AWS</strong>; previously worked
+          with <strong>Boeing & Northrop Grumman</strong>.
+        </p>
+      </div>
+
+      <div class="about-logos">
+        <img src="assets/amazon.png" alt="Amazon Logo" />
+        <div class="contact-icons">
+          <a href="https://www.instagram.com/xavierdargan/"
+            ><img src="assets/instagram.png" alt="Instagram"
+          /></a>
+          <a href="https://github.com/XGamer952"
+            ><img src="assets/github.png" alt="GitHub"
+          /></a>
+          <a href="mailto:xavier_dargan@brown.edu"
+            ><img src="assets/email.png" alt="Email"
+          /></a>
+          <a href="https://www.linkedin.com/in/xavier-dargan/"
+            ><img src="assets/linkedin.png" alt="LinkedIn"
+          /></a>
+        </div>
+        <img src="assets/brown.png" alt="Brown Logo" />
       </div>
     </section>
 
-    <h2 class="section-title align-left">Featured Products</h2>
-    <section class="products">
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
-      <a class="product-card" href="#"
-        ><img src="assets/xray1.png" alt="X-Ray Machine" />
-        <p>Digital Portable X-Ray System</p></a
-      >
+    <section class="project-section">
+      <h2>Project Highlights</h2>
+      <div class="project-grid">
+        <div class="project">
+          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
+          <div class="info">
+            <h3>Responsive Redesign</h3>
+            <p>Redesigning a webpage to be more responsive.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
+          <div class="info">
+            <h3>Responsive Redesign</h3>
+            <p>Redesigning a webpage to be more responsive.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
+          <div class="info">
+            <h3>Responsive Redesign</h3>
+            <p>Redesigning a webpage to be more responsive.</p>
+          </div>
+        </div>
+        <div class="project">
+          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
+          <div class="info">
+            <h3>Responsive Redesign</h3>
+            <p>Redesigning a webpage to be more responsive.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-      &copy;1997–2025 Pacific Northwest X-Ray Inc. – Sales & Marketing Division
-      – All Rights Reserved
-    </footer>
+    <script>
+      const toggle = document.getElementById("hamburger-toggle");
+      const dropdown = document.getElementById("dropdown-menu");
+      toggle.addEventListener("click", () => {
+        dropdown.classList.toggle("show");
+      });
+    </script>
   </body>
 </html>
