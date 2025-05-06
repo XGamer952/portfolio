@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partiful Itineraries</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 180px 1fr;
+        grid-template-areas:
+          "header header"
+          "nav main";
+      }
+
+      header {
+        grid-area: header;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .case-layout {
+        display: contents;
+      }
+
+      .case-layout nav {
+        grid-area: nav;
+        position: sticky;
+        top: 82px;
+        align-self: start;
+        height: calc(100vh - 82px);
+        background-color: #fff;
+        padding: 2rem 1rem;
+        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .case-layout nav a {
+        display: block;
+        margin-bottom: 1rem;
+        color: #222;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .case-layout nav a:hover {
+        color: #50db78;
+      }
+
+      .case-study-content {
+        grid-area: main;
+        padding: 2rem 3rem;
+        max-width: 1000px;
+      }
+
+      .case-study-content h1,
+      .case-study-content h2,
+      .case-study-content h3 {
+        font-family: "Playfair Display", serif;
+      }
+
+      .case-study-content h2 {
+        border-bottom: 2px solid #50db78;
+        padding-bottom: 0.25rem;
+        margin-top: 2.5rem;
+        font-size: 1.5rem;
+      }
+
+      .case-study-content h3 {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .case-study-content p,
+      .case-study-content ul {
+        line-height: 1.6;
+        margin: 1rem 0;
+      }
+
+      .case-study-content ul {
+        padding-left: 1.2rem;
+      }
+
+      .section-description {
+        font-style: italic;
+        color: #555;
+      }
+
+      .flow,
+      .wireframe-img,
+      .sketch-img {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="assets/x-logo.png"
+        alt="Home"
+        class="logo"
+        onclick="location.href='index.html'"
+        style="cursor: pointer"
+      />
+      <div class="header-right">
+        <div class="nav-buttons">
+          <button class="btn-green nav-link">Software</button>
+          <button class="btn-green nav-link">Design</button>
+          <button class="btn-green nav-link">Engineering</button>
+          <button class="btn-green nav-link">Music</button>
+          <button
+            class="btn-blue nav-link"
+            onclick="location.href='about.html'"
+          >
+            About
+          </button>
+          <button
+            class="btn-red nav-link"
+            onclick="window.open('resume.pdf', '_blank')"
+          >
+            Résumé
+          </button>
+        </div>
+        <div class="hamburger-menu">
+          <button id="hamburger-icon">☰</button>
+          <div id="dropdown-menu">
+            <button
+              class="btn-green"
+              onclick="location.href='projects.html#software'"
+            >
+              Software
+            </button>
+            <button
+              class="btn-green"
+              onclick="location.href='projects.html#design'"
+            >
+              Design
+            </button>
+            <button
+              class="btn-green"
+              onclick="location.href='projects.html#engineering'"
+            >
+              Engineering
+            </button>
+            <button
+              class="btn-green"
+              onclick="location.href='projects.html#music'"
+            >
+              Music
+            </button>
+            <button class="btn-blue" onclick="location.href='about.html'">
+              About
+            </button>
+            <button
+              class="btn-red"
+              onclick="window.open('resume.pdf', '_blank')"
+            >
+              Résumé
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="case-layout">
+      <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#approach">Approach</a>
+        <a href="#sketches">Sketches</a>
+        <a href="#wireframes">Wireframes</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#hifi">Hi-Fi Prototype</a>
+        <a href="#conclusion">Conclusion</a>
+      </nav>
+      <div class="case-study-content">
+        <section id="intro">
+          <h1>Partiful Itineraries</h1>
+          <p class="section-description">
+            Designing a smooth interface for multipart events through iterative
+            prototyping
+          </p>
+          <p>
+            Partiful is the premier Event & Party RSVP platform. But its current
+            interface didn’t support hosts planning multi-part events like
+            weekend trips or bar crawls. Our team, consisting of Athena Deng,
+            Kathy Li, Sana Saab, and myself, was asked to design a system that
+            could handle subevents—pre-games, afterparties, outings, and
+            more—all within one party page. We all helped with every aspect of
+            the project, although I specialized with the Hi-Fi Prototypes, both
+            with their design and functionality.
+          </p>
+          <img
+            src="itinerary-assets/goal.png"
+            alt="Design goal image"
+            class="flow"
+          />
+          <p>
+            <strong>Goal:</strong> Create a smooth, intuitive multi-part
+            interface that feels like Partiful—fun, fast, and easy.
+          </p>
+        </section>
+
+        <section id="approach">
+          <h2>Approach</h2>
+          <p>
+            We started with interviews and storyboarding, then built out design
+            flows, low-fi mockups, and high-fidelity prototypes—constantly
+            refining with peer and stakeholder feedback.
+          </p>
+          <img
+            src="itinerary-assets/approach.png"
+            alt="Workflow diagram"
+            class="flow"
+          />
+        </section>
+
+        <section id="sketches">
+          <h2>Sketches</h2>
+          <p class="section-description">
+            We explored RSVP flows, creation options, visibility settings, and
+            layout logic to meet real user needs.
+          </p>
+          <p>Some questions we considered early on:</p>
+          <ul>
+            <li>Should guests RSVP to subevents individually?</li>
+            <li>
+              How do we let hosts create multiparts easily, without confusion?
+            </li>
+            <li>
+              What’s the cleanest way to show multiple subevents on mobile?
+            </li>
+          </ul>
+          <img
+            src="itinerary-assets/sketch-annotations-1.png"
+            alt="Sketch annotations 1"
+            class="sketch-img"
+          />
+          <img
+            src="itinerary-assets/sketch-annotations-2.png"
+            alt="Sketch annotations 2"
+            class="sketch-img"
+          />
+          <img
+            src="itinerary-assets/sketch-annotations-3.png"
+            alt="Sketch annotations 3"
+            class="sketch-img"
+          />
+        </section>
+
+        <section id="wireframes">
+          <h2>Wireframes</h2>
+          <p class="section-description">
+            We tested guest and host experiences with lo-fi mockups in Balsamiq.
+          </p>
+          <p>Key ideas we tried:</p>
+          <ul>
+            <li>RSVP once or RSVP per subevent?</li>
+            <li>Host creation flows with +add buttons</li>
+            <li>Comment threads and photos scoped to specific subevents</li>
+          </ul>
+          <img
+            src="itinerary-assets/balsamiq-invited.png"
+            alt="Guest RSVP wireframe"
+            class="wireframe-img"
+          />
+          <img
+            src="itinerary-assets/balsamiq-host.png"
+            alt="Host creation wireframe"
+            class="wireframe-img"
+          />
+        </section>
+
+        <section id="feedback">
+          <h2>Feedback</h2>
+          <p class="section-description">
+            We received guidance from Partiful’s product designer and other
+            experienced PMs and researchers.
+          </p>
+          <ul>
+            <li>Make subevents feel additive—not like separate pages</li>
+            <li>Keep things simple with clear defaults (e.g., RSVP to all)</li>
+            <li>Support private subevents and per-event tagging</li>
+          </ul>
+        </section>
+
+        <section id="hifi">
+          <h2>Hi-Fi Prototype</h2>
+          <p class="section-description">
+            Our final Figma prototype emphasized a party-forward look with
+            multi-part flexibility.
+          </p>
+          <p>
+            We kept things punchy, flexible, and fun—just like a Partiful party.
+            Key features:
+          </p>
+          <ul>
+            <li>One page, scrollable itinerary</li>
+            <li>Per-subevent RSVP options</li>
+            <li>Clean, mobile-first layouts</li>
+          </ul>
+          <iframe
+            src="https://embed.figma.com/design/FZJtMhJRIx3JmZXs4RNtis/Partiful-Itineraries?node-id=4252-12427&embed-host=share"
+            allowfullscreen
+          ></iframe>
+          <img
+            src="itinerary-assets/partiful-logo.png"
+            alt="Hi-fi logo preview"
+            class="flow"
+          />
+        </section>
+
+        <section id="conclusion">
+          <h2>Conclusion</h2>
+          <p>
+            We built a polished experience that supports how real people
+            party—with room to grow.
+          </p>
+          <p>
+            Next steps could include edge case testing (e.g., 10+ subevents),
+            even better RSVP summaries, and smoother integrations with sharing,
+            maps, or polls.
+          </p>
+          <img
+            src="itinerary-assets/graveyard.png"
+            alt="Feature graveyard"
+            class="flow"
+          />
+        </section>
+      </div>
+    </main>
+
+    <script>
+      document
+        .getElementById("hamburger-icon")
+        .addEventListener("click", function () {
+          document.getElementById("dropdown-menu").classList.toggle("show");
+        });
+    </script>
+  </body>
+</html>
