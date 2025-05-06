@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"
+        ><img src="assets/x-logo.png" alt="Home" class="logo"
+      /></a>
+      <div class="header-right">
+        <div class="nav-buttons">
+          <button class="btn-green">Software</button>
+          <button class="btn-green">Design</button>
+          <button class="btn-green">Engineering</button>
+          <button class="btn-green">Music</button>
+          <button
+            class="btn-blue active"
+            onclick="window.location.href='about.html'"
+          >
+            About
+          </button>
+          <button class="btn-red" onclick="window.open('resume.pdf', '_blank')">
+            Résumé
+          </button>
+        </div>
+        <div class="hamburger-menu">
+          <button onclick="toggleDropdown()">☰</button>
+          <div id="dropdown-menu">
+            <button class="btn-green">Software</button>
+            <button class="btn-green">Design</button>
+            <button class="btn-green">Engineering</button>
+            <button class="btn-green">Music</button>
+            <button
+              class="btn-blue active"
+              onclick="window.location.href='about.html'"
+            >
+              About
+            </button>
+            <button
+              class="btn-red"
+              onclick="window.open('resume.pdf', '_blank')"
+            >
+              Résumé
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="about-main">
+      <div
+        class="about-container"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          width: 100%;
+          padding: 3rem 2rem;
+          flex-wrap: wrap;
+        "
+      >
+        <div
+          class="about-left"
+          style="
+            flex: 0 1 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <img
+            src="assets/headshot.png"
+            alt="Headshot"
+            class="headshot"
+            style="
+              width: 100%;
+              max-width: 400px;
+              height: auto;
+              border-radius: 10px;
+            "
+          />
+          <div class="contact-icons" style="margin-top: 1rem">
+            <a href="https://www.instagram.com/xavierdargan/" target="_blank"
+              ><img
+                src="assets/instagram.png"
+                alt="Instagram"
+                style="width: 45px; height: 45px"
+            /></a>
+            <a href="https://www.linkedin.com/in/xavier-dargan/" target="_blank"
+              ><img
+                src="assets/linkedin.png"
+                alt="LinkedIn"
+                style="width: 45px; height: 45px"
+            /></a>
+            <a href="https://github.com/XGamer952" target="_blank"
+              ><img
+                src="assets/github.png"
+                alt="GitHub"
+                style="width: 45px; height: 45px"
+            /></a>
+            <a href="mailto:xavier_dargan@brown.edu"
+              ><img
+                src="assets/email.png"
+                alt="Email"
+                style="width: 45px; height: 45px"
+            /></a>
+          </div>
+        </div>
+        <div
+          class="about-right"
+          style="
+            flex: 0 1 50%;
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+            padding-left: 3rem;
+            max-width: 600px;
+          "
+        >
+          <h2>About Me!</h2>
+          <p>
+            Heyo! My name is Xavier, and I am a junior studying Computer Science
+            and Music at Brown University. Beyond software and design, I also
+            enjoy singing in a cappella as part of The Brown Derbies a cappella
+            group, as well as singing and playing jazz on electric violin. Along
+            with being a passionate gamer and songwriter, I enjoy playing
+            badminton, engaging in the world of theatre and comedy improv,
+            spending time with friends and family, and being of service to
+            others and my community.
+          </p>
+          <p>
+            If you're interested in connecting further, reach out to me on my
+            socials or email me at xavier_dargan@brown.edu. Hope to chat soon!
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function toggleDropdown() {
+        const menu = document.getElementById("dropdown-menu");
+        menu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>

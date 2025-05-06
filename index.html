@@ -3,51 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xavier Dargan Portfolio</title>
+    <title>Xavier Dargan | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      .nav-buttons {
-        gap: 1rem;
-      }
-    </style>
   </head>
   <body>
     <header>
-      <a href="index.html"
-        ><img src="assets/x-logo.png" alt="Home Logo" class="logo"
-      /></a>
-      <nav class="header-right">
+      <img
+        src="assets/x-logo.png"
+        alt="Home"
+        class="logo"
+        onclick="location.href='index.html'"
+        style="cursor: pointer"
+      />
+      <div class="header-right">
         <div class="nav-buttons">
-          <button class="btn-green">Software</button>
-          <button class="btn-green">Design</button>
-          <button class="btn-green">Engineering</button>
-          <button class="btn-green">Music</button>
-          <button class="btn-blue">About</button>
-          <button class="btn-red" onclick="window.open('resume.pdf')">
+          <button class="btn-green nav-link">Software</button>
+          <button class="btn-green nav-link">Design</button>
+          <button class="btn-green nav-link">Engineering</button>
+          <button class="btn-green nav-link">Music</button>
+          <button
+            class="btn-blue nav-link"
+            onclick="location.href='about.html'"
+          >
+            About
+          </button>
+          <button
+            class="btn-red nav-link"
+            onclick="window.open('resume.pdf', '_blank')"
+          >
             Résumé
           </button>
         </div>
         <div class="hamburger-menu">
-          <button id="hamburger-toggle">☰</button>
+          <button id="hamburger-icon">☰</button>
           <div id="dropdown-menu">
             <button class="btn-green">Software</button>
             <button class="btn-green">Design</button>
             <button class="btn-green">Engineering</button>
             <button class="btn-green">Music</button>
-            <button class="btn-blue">About</button>
-            <button class="btn-red" onclick="window.open('resume.pdf')">
+            <button class="btn-blue" onclick="location.href='about.html'">
+              About
+            </button>
+            <button
+              class="btn-red"
+              onclick="window.open('resume.pdf', '_blank')"
+            >
               Résumé
             </button>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
 
-    <section class="intro">
+    <main>
       <h1 class="intro-heading">
         Hey! My name is
         <span class="xavier-glow accessible-glow">Xavier Dargan</span>,<br />
@@ -73,7 +85,7 @@
       </div>
 
       <div class="about-logos">
-        <img src="assets/amazon.png" alt="Amazon Logo" />
+        <img src="assets/amazon.png" alt="Amazon logo" />
         <div class="contact-icons">
           <a href="https://www.instagram.com/xavierdargan/"
             ><img src="assets/instagram.png" alt="Instagram"
@@ -88,50 +100,68 @@
             ><img src="assets/linkedin.png" alt="LinkedIn"
           /></a>
         </div>
-        <img src="assets/brown.png" alt="Brown Logo" />
+        <img src="assets/brown.png" alt="Brown University logo" />
       </div>
-    </section>
 
-    <section class="project-section">
-      <h2>Project Highlights</h2>
-      <div class="project-grid">
-        <div class="project">
-          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
-          <div class="info">
-            <h3>Responsive Redesign</h3>
-            <p>Redesigning a webpage to be more responsive.</p>
+      <section class="project-section">
+        <h2>Project Highlights</h2>
+        <div class="project-grid">
+          <div class="project">
+            <img
+              src="assets/ResponsiveRedesign.png"
+              alt="Responsive Redesign"
+            />
+            <div class="info">
+              <h3>Responsive Redesign</h3>
+              <p>
+                Redesigning a webpage to be more responsive, accessible, and
+                visually pleasing.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <img src="assets/IterativeDesign.png" alt="Iterative Design" />
+            <div class="info">
+              <h3>Iterative Design</h3>
+              <p>
+                Iterating from sketches to new high-fidelity prototypes for
+                Partiful.
+              </p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="assets/ResponsiveRedesign.png"
+              alt="Accessible Components"
+            />
+            <div class="info">
+              <h3>Accessible Components</h3>
+              <p>Improving the accessiblity of a search bar component.</p>
+            </div>
+          </div>
+          <div class="project">
+            <img
+              src="assets/ResponsiveRedesign.png"
+              alt="Personas & Storyboarding"
+            />
+            <div class="info">
+              <h3>Personas & Storyboarding</h3>
+              <p>
+                Deep-diving about an elevator through the eyes of external
+                users.
+              </p>
+            </div>
           </div>
         </div>
-        <div class="project">
-          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
-          <div class="info">
-            <h3>Responsive Redesign</h3>
-            <p>Redesigning a webpage to be more responsive.</p>
-          </div>
-        </div>
-        <div class="project">
-          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
-          <div class="info">
-            <h3>Responsive Redesign</h3>
-            <p>Redesigning a webpage to be more responsive.</p>
-          </div>
-        </div>
-        <div class="project">
-          <img src="assets/ResponsiveRedesign.png" alt="Responsive Redesign" />
-          <div class="info">
-            <h3>Responsive Redesign</h3>
-            <p>Redesigning a webpage to be more responsive.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <script>
-      const toggle = document.getElementById("hamburger-toggle");
-      const dropdown = document.getElementById("dropdown-menu");
-      toggle.addEventListener("click", () => {
-        dropdown.classList.toggle("show");
-      });
+      document
+        .getElementById("hamburger-icon")
+        .addEventListener("click", function () {
+          document.getElementById("dropdown-menu").classList.toggle("show");
+        });
     </script>
   </body>
 </html>
