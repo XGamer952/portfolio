@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Redesign — Pacific Northwest X-Ray</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 180px 1fr;
+        grid-template-areas: "header header" "nav main";
+      }
+      header {
+        grid-area: header;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      .case-layout {
+        display: contents;
+      }
+      .case-layout nav {
+        grid-area: nav;
+        position: sticky;
+        top: 82px;
+        align-self: start;
+        height: calc(100vh - 82px);
+        background-color: #fff;
+        padding: 2rem 1rem;
+        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+      }
+      .case-layout nav a {
+        display: block;
+        margin-bottom: 1rem;
+        color: #222;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .case-layout nav a:hover {
+        color: #50db78;
+      }
+      .case-study-content {
+        grid-area: main;
+        padding: 2rem 3rem;
+        max-width: 1000px;
+      }
+      .case-study-content h1,
+      .case-study-content h2,
+      .case-study-content h3 {
+        font-family: "Playfair Display", serif;
+      }
+      .case-study-content h2 {
+        border-bottom: 2px solid #50db78;
+        padding-bottom: 0.25rem;
+        margin-top: 2.5rem;
+        font-size: 1.5rem;
+      }
+      .case-study-content img,
+      iframe {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin: 2rem 0;
+      }
+      .annotation {
+        font-size: 0.9rem;
+        margin-top: -1.5rem;
+        margin-bottom: 2rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="assets/x-logo.png"
+        alt="Home"
+        class="logo"
+        onclick="location.href='index.html'"
+        style="cursor: pointer"
+      />
+      <div class="header-right">
+        <div class="nav-buttons">
+          <button
+            class="btn-green nav-link"
+            onclick="location.href='projects.html#software'"
+          >
+            Software
+          </button>
+          <button
+            class="btn-green nav-link"
+            onclick="location.href='projects.html#design'"
+          >
+            Design
+          </button>
+          <button
+            class="btn-green nav-link"
+            onclick="location.href='projects.html#engineering'"
+          >
+            Engineering
+          </button>
+          <button
+            class="btn-green nav-link"
+            onclick="location.href='projects.html#music'"
+          >
+            Music
+          </button>
+          <button
+            class="btn-blue nav-link"
+            onclick="location.href='about.html'"
+          >
+            About
+          </button>
+          <button
+            class="btn-red nav-link"
+            onclick="window.open('resume.pdf', '_blank')"
+          >
+            Résumé
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="case-layout">
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#problems">Usability Issues</a>
+        <a href="#style">Visual Redesign</a>
+        <a href="#mockups">Mockups</a>
+        <a href="#build">Responsive Build</a>
+        <a href="#conclusion">Conclusion</a>
+      </nav>
+      <div class="case-study-content">
+        <section id="overview">
+          <h1>Responsive Redesign: Pacific Northwest X-Ray</h1>
+          <p>
+            <strong>Original:</strong>
+            <a href="https://www.pnwx.com/" target="_blank">pnwx.com</a>
+          </p>
+          <p>
+            <strong>Redesign:</strong>
+            <a
+              href="https://xgamer952.github.io/redesigned-website/"
+              target="_blank"
+              >My Version</a
+            >
+          </p>
+          <p class="section-description">
+            A thoughtful redesign of an outdated X-ray supplier interface into a
+            responsive, accessible site built from scratch.
+          </p>
+          <p>
+            I chose this site for its critical function—selling expensive
+            medical equipment—but surprisingly clunky interface. As a design
+            student, I saw clear potential to improve both user flow and
+            credibility for a specialized audience.
+          </p>
+        </section>
+
+        <section id="problems">
+          <h2>Identifying Usability Problems</h2>
+          <ul>
+            <li>
+              <strong>Efficiency:</strong> Navigation is cluttered and
+              duplicated in both header and side menu.
+            </li>
+            <li>
+              <strong>Learnability:</strong> Users aren’t sure where to go to
+              view products vs. request a quote.
+            </li>
+            <li>
+              <strong>Memorability:</strong> The layout is non-standard and
+              requires re-learning where key features are.
+            </li>
+            <li>
+              <strong>Visual hierarchy:</strong> There’s little spacing or
+              alignment consistency.
+            </li>
+            <li>
+              <strong>Accessibility:</strong> WAVE reports 30+ contrast errors,
+              missing alt text, and layout confusion for screen readers.
+            </li>
+          </ul>
+        </section>
+
+        <section id="style">
+          <h2>Visual Redesign Style Guide</h2>
+          <img src="redesign-assets/style-guide.png" alt="Style Guide" />
+          <p class="annotation">
+            Custom logo, responsive buttons, a fresh blue-and-gold palette, and
+            accessible components unify the new design.
+          </p>
+        </section>
+
+        <section id="mockups">
+          <h2>Responsive Mockups</h2>
+          <h3>Mobile</h3>
+          <img src="redesign-assets/mockup-mobile.png" alt="Mobile Mockup" />
+          <p class="annotation">
+            Collapsed nav, stacked layout, and clear CTAs designed for small
+            screens.
+          </p>
+          <h3>Tablet</h3>
+          <img src="redesign-assets/mockup-tablet.png" alt="Tablet Mockup" />
+          <p class="annotation">
+            Elements rearrange in columns; navigation expands while keeping
+            touch targets large.
+          </p>
+          <h3>Desktop</h3>
+          <img src="redesign-assets/mockup-desktop.png" alt="Desktop Mockup" />
+          <p class="annotation">
+            Full layout with side-by-side product previews, large hero image,
+            and persistent navigation bar.
+          </p>
+        </section>
+
+        <section id="build">
+          <h2>Responsive Build</h2>
+          <p>
+            The final site is built in HTML/CSS using a mix of flexbox and media
+            queries. Accessibility was validated via WebAIM, and all content
+            scales smoothly across resolutions. I avoided JS frameworks to keep
+            things lean and compliant.
+          </p>
+          <p>
+            <a
+              href="https://xgamer952.github.io/redesigned-website/"
+              target="_blank"
+              >Check out the live redesign →</a
+            >
+          </p>
+        </section>
+
+        <section id="conclusion">
+          <h2>Conclusion</h2>
+          <ul>
+            <li>Good design makes complex, technical tools approachable.</li>
+            <li>
+              Responsiveness is more than resizing—it’s about rethinking layout
+              logic.
+            </li>
+            <li>
+              Accessibility tools like WAVE are a must in any modern redesign.
+            </li>
+          </ul>
+          <p>
+            Ultimately, this redesign makes a specialized B2B experience
+            smoother, clearer, and more trustworthy for real users.
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
