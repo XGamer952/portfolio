@@ -45,8 +45,14 @@ h3 {
   flex-wrap: wrap;
 }
 
+.about-logos img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 .about-logos img {
   max-height: 90px;
+  transition: opacity 0.3s ease;
 }
 
 .contact-icons {
@@ -76,6 +82,12 @@ header {
 
 .logo {
   height: 50px;
+  transition: filter 0.3s ease;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 10px limegreen);
+  cursor: pointer;
 }
 
 .header-right {

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .category-section {
+        padding: 3rem 1rem;
+        border-radius: 10px;
+        margin: 2rem auto;
+        max-width: 1100px;
+      }
+
+      .category-section h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        justify-content: center;
+        align-items: stretch;
+      }
+
+      .project-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background: #aaa;
+      }
+
+      .project-card h3 {
+        margin: 0.75rem 0 0.25rem;
+        font-family: "Playfair Display", serif;
+      }
+
+      .project-card p {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.9rem;
+        padding: 0 1rem 1rem;
+        color: #333;
+      }
+
+      #software {
+        background: rgba(50, 100, 70, 0.85);
+      }
+      #design {
+        background: rgba(100, 40, 70, 0.85);
+      }
+      #engineering {
+        background: rgba(180, 120, 30, 0.85);
+      }
+      #music {
+        background: rgba(40, 50, 110, 0.85);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="assets/x-logo.png"
+        alt="Home"
+        class="logo"
+        onclick="location.href='index.html'"
+        style="cursor: pointer"
+      />
+      <div class="header-right">
+        <div class="nav-buttons">
+          <button
+            class="btn-green active nav-link"
+            onclick="location.href='#software'"
+          >
+            Software
+          </button>
+          <button
+            class="btn-green active nav-link"
+            onclick="location.href='#design'"
+          >
+            Design
+          </button>
+          <button
+            class="btn-green active nav-link"
+            onclick="location.href='#engineering'"
+          >
+            Engineering
+          </button>
+          <button
+            class="btn-green active nav-link"
+            onclick="location.href='#music'"
+          >
+            Music
+          </button>
+          <button
+            class="btn-blue nav-link"
+            onclick="location.href='about.html'"
+          >
+            About
+          </button>
+          <button
+            class="btn-red nav-link"
+            onclick="window.open('resume.pdf', '_blank')"
+          >
+            Résumé
+          </button>
+        </div>
+        <div class="hamburger-menu">
+          <button id="hamburger-icon">☰</button>
+          <div id="dropdown-menu">
+            <button
+              class="btn-green active"
+              onclick="location.href='projects.html#software'"
+            >
+              Software
+            </button>
+            <button
+              class="btn-green active"
+              onclick="location.href='projects.html#design'"
+            >
+              Design
+            </button>
+            <button
+              class="btn-green active"
+              onclick="location.href='projects.html#engineering'"
+            >
+              Engineering
+            </button>
+            <button
+              class="btn-green active"
+              onclick="location.href='projects.html#music'"
+            >
+              Music
+            </button>
+            <button class="btn-blue" onclick="location.href='about.html'">
+              About
+            </button>
+            <button
+              class="btn-red"
+              onclick="window.open('resume.pdf', '_blank')"
+            >
+              Résumé
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="software" class="category-section">
+        <h2>Software</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="assets/placeholder.png" alt="Placeholder" />
+            <h3>To Be Added</h3>
+            <p>Placeholder for upcoming software project.</p>
+          </div>
+          <div class="project-card">
+            <img src="assets/placeholder.png" alt="Placeholder" />
+            <h3>To Be Added</h3>
+            <p>Placeholder for upcoming software project.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="design" class="category-section">
+        <h2>Design</h2>
+        <div class="project-grid">
+          <a href="redesign.html" class="project-link">
+            <div class="project">
+              <img
+                src="assets/ResponsiveRedesign.png"
+                alt="Responsive Redesign"
+              />
+              <div class="info">
+                <h3>Responsive Redesign</h3>
+                <p>
+                  Redesigning a webpage to be more responsive, accessible, and
+                  visually pleasing.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="itineraries.html" class="project-link">
+            <div class="project">
+              <img src="assets/IterativeDesign.png" alt="Iterative Design" />
+              <div class="info">
+                <h3>Iterative Design</h3>
+                <p>
+                  Iterating from sketches to new high-fidelity prototypes for
+                  Partiful.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="components.html" class="project-link">
+            <div class="project">
+              <img
+                src="assets/AccessibleComponents.png"
+                alt="Accessible Components"
+              />
+              <div class="info">
+                <h3>Accessible Components</h3>
+                <p>
+                  Improving the accessiblity of Nintendo's search bar component.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="personas.html" class="project-link">
+            <div class="project">
+              <img
+                src="assets/PersonasStoryboarding.png"
+                alt="Personas & Storyboarding"
+              />
+              <div class="info">
+                <h3>Personas & Storyboarding</h3>
+                <p>
+                  Deep-dive about an elevator's functionality and design through
+                  the eyes of external users.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="engineering" class="category-section">
+        <h2>Engineering</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="assets/placeholder.png" alt="Placeholder" />
+            <h3>To Be Added</h3>
+            <p>Placeholder for upcoming engineering project.</p>
+          </div>
+          <div class="project-card">
+            <img src="assets/placeholder.png" alt="Placeholder" />
+            <h3>To Be Added</h3>
+            <p>Placeholder for upcoming engineering project.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="music" class="category-section">
+        <h2>Music</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img src="assets/placeholder.png" alt="Placeholder" />
+            <h3>To Be Added</h3>
+            <p>Placeholder for upcoming music project.</p>
+          </div>
+          <div class="project-card">
+            <img src="assets/placeholder.png" alt="Placeholder" />
+            <h3>To Be Added</h3>
+            <p>Placeholder for upcoming music project.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      document
+        .getElementById("hamburger-icon")
+        .addEventListener("click", function () {
+          document.getElementById("dropdown-menu").classList.toggle("show");
+        });
+    </script>
+  </body>
+</html>
