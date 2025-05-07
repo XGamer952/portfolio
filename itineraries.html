@@ -62,14 +62,16 @@
 
       .case-study-content {
         grid-area: main;
-        padding: 2rem 3rem;
-        max-width: 1000px;
+        padding: 2rem 1.5rem 2rem 2.5rem;
+        max-width: none;
+        margin-left: 0;
       }
 
       .case-study-content h1,
       .case-study-content h2,
       .case-study-content h3 {
         font-family: "Playfair Display", serif;
+        text-align: left;
       }
 
       .case-study-content h2 {
@@ -85,13 +87,16 @@
       }
 
       .case-study-content p,
-      .case-study-content ul {
+      .case-study-content ul,
+      .case-study-content ol {
         line-height: 1.6;
         margin: 1rem 0;
+        text-align: left;
       }
 
-      .case-study-content ul {
-        padding-left: 1.2rem;
+      .case-study-content ul,
+      .case-study-content ol {
+        padding-left: 1.5rem;
       }
 
       .section-description {
@@ -195,6 +200,11 @@
             Designing a smooth interface for multipart events through iterative
             prototyping
           </p>
+          <img
+            src="assets/IterativeDesign.png"
+            alt="Hi-fi logo preview"
+            class="flow"
+          />
           <p>
             Partiful is the premier Event & Party RSVP platform. But its current
             interface didn’t support hosts planning multi-part events like
@@ -318,11 +328,6 @@
             src="https://embed.figma.com/design/FZJtMhJRIx3JmZXs4RNtis/Partiful-Itineraries?node-id=4252-12427&embed-host=share"
             allowfullscreen
           ></iframe>
-          <img
-            src="itinerary-assets/partiful-logo.png"
-            alt="Hi-fi logo preview"
-            class="flow"
-          />
         </section>
 
         <section id="conclusion">

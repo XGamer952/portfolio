@@ -62,14 +62,16 @@
 
       .case-study-content {
         grid-area: main;
-        padding: 2rem 3rem;
-        max-width: 1000px;
+        padding: 2rem 1.5rem 2rem 2.5rem;
+        max-width: none;
+        margin-left: 0;
       }
 
       .case-study-content h1,
       .case-study-content h2,
       .case-study-content h3 {
         font-family: "Playfair Display", serif;
+        text-align: left;
       }
 
       .case-study-content h2 {
@@ -85,13 +87,16 @@
       }
 
       .case-study-content p,
-      .case-study-content ul {
+      .case-study-content ul,
+      .case-study-content ol {
         line-height: 1.6;
         margin: 1rem 0;
+        text-align: left;
       }
 
-      .case-study-content ul {
-        padding-left: 1.2rem;
+      .case-study-content ul,
+      .case-study-content ol {
+        padding-left: 1.5rem;
       }
 
       .section-description {
@@ -169,30 +174,10 @@
       />
       <div class="header-right">
         <div class="nav-buttons">
-          <button
-            class="btn-green nav-link"
-            onclick="location.href='projects.html#software'"
-          >
-            Software
-          </button>
-          <button
-            class="btn-green nav-link"
-            onclick="location.href='projects.html#design'"
-          >
-            Design
-          </button>
-          <button
-            class="btn-green nav-link"
-            onclick="location.href='projects.html#engineering'"
-          >
-            Engineering
-          </button>
-          <button
-            class="btn-green nav-link"
-            onclick="location.href='projects.html#music'"
-          >
-            Music
-          </button>
+          <button class="btn-green nav-link">Software</button>
+          <button class="btn-green nav-link">Design</button>
+          <button class="btn-green nav-link">Engineering</button>
+          <button class="btn-green nav-link">Music</button>
           <button
             class="btn-blue nav-link"
             onclick="location.href='about.html'"
@@ -238,8 +223,14 @@
         <section id="intro">
           <h1>Responsive Redesign</h1>
           <p class="section-description">
-            Making medical websites feel less like paperwork.
+            Transforming poorly-designed websites with a responsive new coat of
+            paint.
           </p>
+          <img
+            src="assets/ResponsiveRedesign.png"
+            alt="Hi-fi logo preview"
+            class="flow"
+          />
           <p>
             The original website for
             <a href="https://www.pnwx.com/" target="_blank"

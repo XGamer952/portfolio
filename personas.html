@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personas & Storyboarding</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 180px 1fr;
+        grid-template-areas:
+          "header header"
+          "nav main";
+      }
+
+      header {
+        grid-area: header;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      .case-layout {
+        display: contents;
+      }
+
+      .case-layout nav {
+        grid-area: nav;
+        position: sticky;
+        top: 82px;
+        align-self: start;
+        height: calc(100vh - 82px);
+        background-color: #fff;
+        padding: 2rem 1rem;
+        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .case-layout nav a {
+        display: block;
+        margin-bottom: 1rem;
+        color: #222;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .case-layout nav a:hover {
+        color: #50db78;
+      }
+
+      .case-study-content {
+        grid-area: main;
+        padding: 2rem 1.5rem 2rem 2.5rem;
+        max-width: none;
+        margin-left: 0;
+      }
+
+      .case-study-content h1,
+      .case-study-content h2,
+      .case-study-content h3 {
+        font-family: "Playfair Display", serif;
+        text-align: left;
+      }
+
+      .case-study-content h2 {
+        border-bottom: 2px solid #50db78;
+        padding-bottom: 0.25rem;
+        margin-top: 2.5rem;
+        font-size: 1.5rem;
+      }
+
+      .case-study-content h3 {
+        font-size: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .case-study-content p,
+      .case-study-content ul,
+      .case-study-content ol {
+        line-height: 1.6;
+        margin: 1rem 0;
+        text-align: left;
+      }
+
+      .case-study-content ul,
+      .case-study-content ol {
+        padding-left: 1.5rem;
+      }
+
+      .section-description {
+        font-style: italic;
+        color: #555;
+      }
+
+      .flow,
+      .wireframe-img,
+      .sketch-img,
+      iframe {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="assets/x-logo.png"
+        alt="Home"
+        class="logo"
+        onclick="location.href='index.html'"
+        style="cursor: pointer"
+      />
+      <div class="header-right">
+        <div class="nav-buttons">
+          <button class="btn-green nav-link">Software</button>
+          <button class="btn-green nav-link">Design</button>
+          <button class="btn-green nav-link">Engineering</button>
+          <button class="btn-green nav-link">Music</button>
+          <button
+            class="btn-blue nav-link"
+            onclick="location.href='about.html'"
+          >
+            About
+          </button>
+          <button
+            class="btn-red nav-link"
+            onclick="window.open('resume.pdf', '_blank')"
+          >
+            Résumé
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="case-layout">
+      <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#observations">Observations</a>
+        <a href="#personas">Personas</a>
+        <a href="#storyboard">Storyboard</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
+      <div class="case-study-content">
+        <section id="intro">
+          <h1>Personas & Storyboarding</h1>
+          <p class="section-description">
+            Empathizing with elevator users to design better vertical
+            experiences.
+          </p>
+          <p>
+            This project aimed to understand real-life user interactions with
+            elevators, a common yet often overlooked public interface. Through
+            contextual inquiry, interviews, and storyboarding, I examined how
+            people navigate elevators and the pain points they encounter along
+            the way.
+          </p>
+        </section>
+
+        <section id="observations">
+          <h2>Observations</h2>
+          <p>
+            I observed and interviewed three users. Common behaviors included:
+          </p>
+          <ul>
+            <li>
+              Uncertainty when the elevator interface offered multiple sets of
+              buttons (e.g., lobby panel vs. inside)
+            </li>
+            <li>
+              Confusion about confirmation when a button press registered (no
+              sound/lighting feedback)
+            </li>
+            <li>
+              Hesitation when sharing an elevator with others or during crowded
+              use
+            </li>
+          </ul>
+          <p>Interview questions included:</p>
+          <ol>
+            <li>
+              What’s the first thing you look for when you approach an elevator?
+            </li>
+            <li>Have you ever had trouble getting an elevator to respond?</li>
+            <li>What frustrates you most about using elevators?</li>
+          </ol>
+          <p>
+            Most responses centered on lack of feedback, unclear signage, and
+            anxiety about missing their floor or pressing the wrong button.
+          </p>
+        </section>
+
+        <section id="personas">
+          <h2>Personas</h2>
+          <h3>1. Jordan – The Anxious Newcomer</h3>
+          <ul>
+            <li><strong>Think:</strong> “What if I press the wrong button?”</li>
+            <li>
+              <strong>Feel:</strong> Nervous in shared elevator spaces, easily
+              overwhelmed
+            </li>
+            <li>
+              <strong>Say:</strong> “I wish it gave a sound or something when I
+              press!”
+            </li>
+            <li>
+              <strong>Do:</strong> Double-presses the button and checks signage
+              multiple times
+            </li>
+          </ul>
+          <p>
+            <strong>Description:</strong> Jordan is a college student new to
+            campus housing and unsure of elevator etiquette or norms. They
+            represent users who are anxious or less familiar with shared public
+            interfaces and need reassurance.
+          </p>
+
+          <h3>2. Denise – The Busy Professional</h3>
+          <ul>
+            <li><strong>Think:</strong> “Why is this taking so long?”</li>
+            <li>
+              <strong>Feel:</strong> Frustrated by inefficiency and unclear UX
+            </li>
+            <li>
+              <strong>Say:</strong> “Why are there two panels—am I supposed to
+              use both?”
+            </li>
+            <li>
+              <strong>Do:</strong> Rapidly presses close door, glances at watch
+              often
+            </li>
+          </ul>
+          <p>
+            <strong>Description:</strong> Denise is an office worker who uses
+            the building’s elevator system multiple times a day. She expects
+            fast, predictable responses and dislikes ambiguous UI design. She
+            represents power users familiar with the environment but frustrated
+            by slow or unclear interactions.
+          </p>
+        </section>
+
+        <section id="storyboard">
+          <h2>Storyboard</h2>
+          <p class="section-description">
+            A day in the life of Jordan navigating the dorm elevator
+          </p>
+          <img
+            src="assets/PersonasStoryboarding.png"
+            alt="Elevator storyboard"
+            class="flow"
+          />
+        </section>
+
+        <section id="reflection">
+          <h2>Reflection</h2>
+          <p>
+            I learned that even mundane interfaces like elevators contain
+            emotional tension—especially for newcomers or people with
+            accessibility needs. Designing for feedback, clarity, and social
+            comfort can go a long way. I’d like to explore UI alternatives like
+            light and sound indicators or even voice-assisted guidance for
+            greater confidence.
+          </p>
+        </section>
+      </div>
+    </main>
+    <script>
+      document
+        .getElementById("hamburger-icon")
+        .addEventListener("click", function () {
+          document.getElementById("dropdown-menu").classList.toggle("show");
+        });
+    </script>
+  </body>
+</html>
