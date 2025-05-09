@@ -5,124 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Partiful Itineraries</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="case-study.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        margin: 0;
-        display: grid;
-        grid-template-rows: auto 1fr;
-        grid-template-columns: 180px 1fr;
-        grid-template-areas:
-          "header header"
-          "nav main";
-      }
-
-      header {
-        grid-area: header;
-        position: sticky;
-        top: 0;
-        background: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem 1.5rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
-
-      .case-layout {
-        display: contents;
-      }
-
-      .case-layout nav {
-        grid-area: nav;
-        position: sticky;
-        top: 82px;
-        align-self: start;
-        height: calc(100vh - 82px);
-        background-color: #fff;
-        padding: 2rem 1rem;
-        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
-      }
-
-      .case-layout nav a {
-        display: block;
-        margin-bottom: 1rem;
-        color: #222;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .case-layout nav a:hover {
-        color: #50db78;
-      }
-
-      .case-study-content {
-        grid-area: main;
-        padding: 2rem 1.5rem 2rem 2.5rem;
-        max-width: none;
-        margin-left: 0;
-      }
-
-      .case-study-content h1,
-      .case-study-content h2,
-      .case-study-content h3 {
-        font-family: "Playfair Display", serif;
-        text-align: left;
-      }
-
-      .case-study-content h2 {
-        border-bottom: 2px solid #50db78;
-        padding-bottom: 0.25rem;
-        margin-top: 2.5rem;
-        font-size: 1.5rem;
-      }
-
-      .case-study-content h3 {
-        font-size: 1.25rem;
-        margin-top: 1.5rem;
-      }
-
-      .case-study-content p,
-      .case-study-content ul,
-      .case-study-content ol {
-        line-height: 1.6;
-        margin: 1rem 0;
-        text-align: left;
-      }
-
-      .case-study-content ul,
-      .case-study-content ol {
-        padding-left: 1.5rem;
-      }
-
-      .section-description {
-        font-style: italic;
-        color: #555;
-      }
-
-      .flow,
-      .wireframe-img,
-      .sketch-img {
-        max-width: 100%;
-        height: auto;
-        margin: 2rem 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        border-radius: 10px;
-      }
-    </style>
   </head>
   <body>
+    <div
+      class="side-nav-overlay"
+      id="side-nav-overlay"
+      onclick="toggleSideNav()"
+    ></div>
+    <div class="nav-toggle" id="nav-toggle" onclick="toggleSideNav()">▶</div>
+
     <header>
       <img
         src="assets/x-logo.png"
         alt="Home"
         class="logo"
         onclick="location.href='index.html'"
-        style="cursor: pointer"
       />
       <div class="header-right">
         <div class="nav-buttons">
@@ -203,16 +105,18 @@
         </div>
       </div>
     </header>
+
     <main class="case-layout">
-      <nav>
-        <a href="#intro">Introduction</a>
-        <a href="#approach">Approach</a>
-        <a href="#sketches">Sketches</a>
-        <a href="#wireframes">Wireframes</a>
-        <a href="#feedback">Feedback</a>
-        <a href="#hifi">Hi-Fi Prototype</a>
-        <a href="#conclusion">Conclusion</a>
+      <nav id="side-nav">
+        <a href="#intro" onclick="toggleSideNav()">Introduction</a>
+        <a href="#approach" onclick="toggleSideNav()">Approach</a>
+        <a href="#sketches" onclick="toggleSideNav()">Sketches</a>
+        <a href="#wireframes" onclick="toggleSideNav()">Wireframes</a>
+        <a href="#feedback" onclick="toggleSideNav()">Feedback</a>
+        <a href="#hifi" onclick="toggleSideNav()">Hi-Fi Prototype</a>
+        <a href="#conclusion" onclick="toggleSideNav()">Conclusion</a>
       </nav>
+
       <div class="case-study-content">
         <section id="intro">
           <h1>Partiful Itineraries</h1>
@@ -228,12 +132,7 @@
           <p>
             Partiful is the premier Event & Party RSVP platform. But its current
             interface didn’t support hosts planning multi-part events like
-            weekend trips or bar crawls. Our team, consisting of Athena Deng,
-            Kathy Li, Sana Saab, and myself, was asked to design a system that
-            could handle subevents—pre-games, afterparties, outings, and
-            more—all within one party page. We all helped with every aspect of
-            the project, although I specialized with the Hi-Fi Prototypes, both
-            with their design and functionality.
+            weekend trips or bar crawls...
           </p>
           <img
             src="itinerary-assets/goal.png"
@@ -251,7 +150,7 @@
           <p>
             We started with interviews and storyboarding, then built out design
             flows, low-fi mockups, and high-fidelity prototypes—constantly
-            refining with peer and stakeholder feedback.
+            refining with feedback.
           </p>
           <img
             src="itinerary-assets/approach.png"
@@ -266,7 +165,6 @@
             We explored RSVP flows, creation options, visibility settings, and
             layout logic to meet real user needs.
           </p>
-          <p>Some questions we considered early on:</p>
           <ul>
             <li>Should guests RSVP to subevents individually?</li>
             <li>
@@ -278,17 +176,14 @@
           </ul>
           <img
             src="itinerary-assets/sketch-annotations-1.png"
-            alt="Sketch annotations 1"
             class="sketch-img"
           />
           <img
             src="itinerary-assets/sketch-annotations-2.png"
-            alt="Sketch annotations 2"
             class="sketch-img"
           />
           <img
             src="itinerary-assets/sketch-annotations-3.png"
-            alt="Sketch annotations 3"
             class="sketch-img"
           />
         </section>
@@ -298,7 +193,6 @@
           <p class="section-description">
             We tested guest and host experiences with lo-fi mockups in Balsamiq.
           </p>
-          <p>Key ideas we tried:</p>
           <ul>
             <li>RSVP once or RSVP per subevent?</li>
             <li>Host creation flows with +add buttons</li>
@@ -306,14 +200,9 @@
           </ul>
           <img
             src="itinerary-assets/balsamiq-invited.png"
-            alt="Guest RSVP wireframe"
             class="wireframe-img"
           />
-          <img
-            src="itinerary-assets/balsamiq-host.png"
-            alt="Host creation wireframe"
-            class="wireframe-img"
-          />
+          <img src="itinerary-assets/balsamiq-host.png" class="wireframe-img" />
         </section>
 
         <section id="feedback">
@@ -335,10 +224,6 @@
             Our final Figma prototype emphasized a party-forward look with
             multi-part flexibility.
           </p>
-          <p>
-            We kept things punchy, flexible, and fun—just like a Partiful party.
-            Key features:
-          </p>
           <ul>
             <li>One page, scrollable itinerary</li>
             <li>Per-subevent RSVP options</li>
@@ -357,20 +242,24 @@
             party—with room to grow.
           </p>
           <p>
-            Next steps could include edge case testing (e.g., 10+ subevents),
-            even better RSVP summaries, and smoother integrations with sharing,
-            maps, or polls.
+            Next steps could include edge case testing, RSVP summaries, and
+            integrations with sharing/maps/polls.
           </p>
-          <img
-            src="itinerary-assets/graveyard.png"
-            alt="Feature graveyard"
-            class="flow"
-          />
+          <img src="itinerary-assets/graveyard.png" class="flow" />
         </section>
       </div>
     </main>
 
     <script>
+      function toggleSideNav() {
+        const nav = document.getElementById("side-nav");
+        const overlay = document.getElementById("side-nav-overlay");
+        const toggle = document.getElementById("nav-toggle");
+        const isOpen = nav.classList.toggle("open");
+        overlay.classList.toggle("show", isOpen);
+        toggle.textContent = isOpen ? "◀" : "▶";
+      }
+
       document
         .getElementById("hamburger-icon")
         .addEventListener("click", function () {

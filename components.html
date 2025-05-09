@@ -5,132 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessible Components</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="case-study.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Playfair+Display&family=DynaPuff&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        margin: 0;
-        display: grid;
-        grid-template-rows: auto 1fr;
-        grid-template-columns: 180px 1fr;
-        grid-template-areas:
-          "header header"
-          "nav main";
-      }
-
-      header {
-        grid-area: header;
-        position: sticky;
-        top: 0;
-        background: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.75rem 1.5rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
-
-      .case-layout {
-        display: contents;
-      }
-
-      .case-layout nav {
-        grid-area: nav;
-        position: sticky;
-        top: 82px;
-        align-self: start;
-        height: calc(100vh - 82px);
-        background-color: #fff;
-        padding: 2rem 1rem;
-        box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
-      }
-
-      .case-layout nav a {
-        display: block;
-        margin-bottom: 1rem;
-        color: #222;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .case-layout nav a:hover {
-        color: #50db78;
-      }
-
-      .case-study-content {
-        grid-area: main;
-        padding: 2rem 1.5rem 2rem 2.5rem;
-        max-width: none;
-        margin-left: 0;
-      }
-
-      .case-study-content h1,
-      .case-study-content h2,
-      .case-study-content h3 {
-        font-family: "Playfair Display", serif;
-        text-align: left;
-      }
-
-      .case-study-content h2 {
-        border-bottom: 2px solid #50db78;
-        padding-bottom: 0.25rem;
-        margin-top: 2.5rem;
-        font-size: 1.5rem;
-      }
-
-      .case-study-content h3 {
-        font-size: 1.25rem;
-        margin-top: 1.5rem;
-      }
-
-      .case-study-content p,
-      .case-study-content ul,
-      .case-study-content ol {
-        line-height: 1.6;
-        margin: 1rem 0;
-        text-align: left;
-      }
-
-      .case-study-content ul,
-      .case-study-content ol {
-        padding-left: 1.5rem;
-      }
-
-
-      .section-description {
-        font-style: italic;
-        color: #555;
-      }
-
-      .flow,
-      .wireframe-img,
-      .sketch-img,
-      iframe {
-        max-width: 100%;
-        height: auto;
-        margin: 2rem 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        border-radius: 10px;
-      }
-
-      iframe {
-        width: 100%;
-        height: 700px;
-        border: none;
-      }
-    </style>
   </head>
   <body>
+    <div
+      class="side-nav-overlay"
+      id="side-nav-overlay"
+      onclick="toggleSideNav()"
+    ></div>
+    <div class="nav-toggle" id="nav-toggle" onclick="toggleSideNav()">▶</div>
+
     <header>
       <img
         src="assets/x-logo.png"
         alt="Home"
         class="logo"
         onclick="location.href='index.html'"
-        style="cursor: pointer"
       />
       <div class="header-right">
         <div class="nav-buttons">
@@ -191,20 +85,23 @@
         </div>
       </div>
     </header>
+
     <main class="case-layout">
-      <nav>
-        <a href="#intro">Introduction</a>
-        <a href="#input">Inputs</a>
-        <a href="#output">Outputs</a>
-        <a href="#states">State Models</a>
-        <a href="#design">Redesign</a>
-        <a href="#reflection">Reflection</a>
+      <nav id="side-nav">
+        <a href="#intro" onclick="toggleSideNav()">Introduction</a>
+        <a href="#input" onclick="toggleSideNav()">Inputs</a>
+        <a href="#output" onclick="toggleSideNav()">Outputs</a>
+        <a href="#states" onclick="toggleSideNav()">State Models</a>
+        <a href="#design" onclick="toggleSideNav()">Redesign</a>
+        <a href="#reflection" onclick="toggleSideNav()">Reflection</a>
       </nav>
+
       <div class="case-study-content">
         <section id="intro">
           <h1>Accessible Search Bar</h1>
           <p class="section-description">
-            Recreating Nintendo's search bar for inclusive interaction across all inputs.
+            Recreating Nintendo's search bar for inclusive interaction across
+            all inputs.
           </p>
           <img
             src="assets/AccessibleComponents.png"
@@ -212,69 +109,118 @@
             class="flow"
           />
           <p>
-            The search bar is a deceptively simple component. It’s ubiquitous, yet surprisingly inconsistent across platforms when it comes to accessibility. I chose to redesign the search bar component using Nintendo's implementation as a model, with accessibility at the forefront.
+            The search bar is a deceptively simple component. It’s ubiquitous,
+            yet surprisingly inconsistent across platforms when it comes to
+            accessibility. I chose to redesign the search bar component using
+            Nintendo's implementation as a model, with accessibility at the
+            forefront.
           </p>
         </section>
+
         <section id="input">
           <h2>Input Accessibility</h2>
-          <p>We analyzed the search bar component in:</p>
           <ul>
-            <li><strong>Nintendo</strong>: Clean input, clear focus style, full keyboard accessibility</li>
-            <li><strong>Amazon</strong>: Extensive autocomplete, but keyboard interaction is noisy</li>
-            <li><strong>Suruga-Ya</strong>: Lacks visual feedback and has inconsistent label structure</li>
+            <li>
+              <strong>Nintendo</strong>: Clean input, clear focus style, full
+              keyboard accessibility
+            </li>
+            <li>
+              <strong>Amazon</strong>: Extensive autocomplete, but keyboard
+              interaction is noisy
+            </li>
+            <li>
+              <strong>Suruga-Ya</strong>: Lacks visual feedback and has
+              inconsistent label structure
+            </li>
           </ul>
           <p>
-            I compared mouse, keyboard, and mobile interactions across all three and recorded how users can activate, edit, and submit text. The most accessible component was Nintendo’s—each action was predictable and screen reader-friendly.
+            I compared mouse, keyboard, and mobile interactions across all three
+            and recorded how users can activate, edit, and submit text. The most
+            accessible component was Nintendo’s—each action was predictable and
+            screen reader-friendly.
           </p>
         </section>
+
         <section id="output">
           <h2>Output Accessibility</h2>
           <p>
-            Nintendo's search bar provides strong feedback: focus outlines, placeholder text, and a visible clear button. Suruga-Ya offers none of these. Screen reader support was also minimal on Suruga-Ya compared to Amazon and Nintendo.
+            Nintendo's search bar provides strong feedback: focus outlines,
+            placeholder text, and a visible clear button. Suruga-Ya offers none
+            of these. Screen reader support was also minimal on Suruga-Ya
+            compared to Amazon and Nintendo.
           </p>
           <p>
-            Focus order on Nintendo made sense, but Suruga-Ya skipped elements or reordered them, which disrupted keyboard-only navigation.
+            Focus order on Nintendo made sense, but Suruga-Ya skipped elements
+            or reordered them, which disrupted keyboard-only navigation.
           </p>
         </section>
+
         <section id="states">
           <h2>State Models</h2>
           <p>
-            I diagrammed separate state models for mouse and keyboard usage. For instance, the focused state is reached via click or tab key. Autocomplete state activates after 2+ characters typed. Disabled or empty states have distinct visual and screen reader output.
+            I diagrammed separate state models for mouse and keyboard usage. For
+            instance, the focused state is reached via click or tab key.
+            Autocomplete state activates after 2+ characters typed. Disabled or
+            empty states have distinct visual and screen reader output.
           </p>
           <p>
-            I then revised these state models to optimize clarity for keyboard users and screen readers—for example, allowing ESC to exit autocomplete mode cleanly, or improving how placeholder text is described.
+            I then revised these state models to optimize clarity for keyboard
+            users and screen readers—for example, allowing ESC to exit
+            autocomplete mode cleanly, or improving how placeholder text is
+            described.
           </p>
         </section>
+
         <section id="design">
           <h2>My Redesign</h2>
           <p class="section-description">
             Final redesigned component using Figma.
           </p>
-          <p>
-            I kept the clean visual style of Nintendo's bar, but ensured it:
-            <ul>
-              <li>Announces placeholder and input mode to screen readers</li>
-              <li>Has robust keyboard-only support (e.g., arrow keys in suggestions)</li>
-              <li>Maintains visual focus ring with high contrast</li>
-            </ul>
-          </p>
-          <iframe src="https://embed.figma.com/design/..." allowfullscreen></iframe>
+          <ul>
+            <li>Announces placeholder and input mode to screen readers</li>
+            <li>
+              Has robust keyboard-only support (e.g., arrow keys in suggestions)
+            </li>
+            <li>Maintains visual focus ring with high contrast</li>
+          </ul>
+          <iframe
+            src="https://embed.figma.com/design/..."
+            allowfullscreen
+          ></iframe>
         </section>
+
         <section id="reflection">
           <h2>Reflection</h2>
           <p>
-            Designing an accessible component forced me to think in terms of edge cases and non-mouse users. I was inspired by Nintendo’s clarity and disappointed by Suruga-Ya’s ambiguity.
+            Designing an accessible component forced me to think in terms of
+            edge cases and non-mouse users. I was inspired by Nintendo’s clarity
+            and disappointed by Suruga-Ya’s ambiguity.
           </p>
           <p>
-            The biggest challenge was balancing minimalism with usability—for example, having a visible label might clutter the page, but it's crucial for screen readers. I now recognize that accessibility isn’t an add-on—it’s a core design decision.
+            The biggest challenge was balancing minimalism with usability—for
+            example, having a visible label might clutter the page, but it's
+            crucial for screen readers. I now recognize that accessibility isn’t
+            an add-on—it’s a core design decision.
           </p>
         </section>
       </div>
     </main>
+
     <script>
-      document.getElementById("hamburger-icon")?.addEventListener("click", function () {
-        document.getElementById("dropdown-menu")?.classList.toggle("show");
-      });
+      function toggleSideNav() {
+        const nav = document.getElementById("side-nav");
+        const overlay = document.getElementById("side-nav-overlay");
+        const toggle = document.getElementById("nav-toggle");
+        const isOpen = nav.classList.toggle("open");
+        overlay.classList.toggle("show", isOpen);
+        toggle.textContent = isOpen ? "◀" : "▶";
+      }
+
+      document
+        .getElementById("hamburger-icon")
+        ?.addEventListener("click", function () {
+          document.getElementById("dropdown-menu")?.classList.toggle("show");
+        });
     </script>
   </body>
 </html>
