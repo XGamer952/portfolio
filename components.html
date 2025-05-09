@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accessible Components</title>
+    <title>Accessible Components: Search Bar</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="case-study.css" />
     <link
@@ -102,91 +102,154 @@
         <section id="intro">
           <h1>Accessible Search Bar</h1>
           <p class="section-description">
-            Recreating Nintendo's search bar for inclusive interaction across
-            all inputs.
+            Redesigning Nintendo's search bar to balance visual clarity, input
+            flexibility, and accessible feedback.
           </p>
           <img
             src="assets/AccessibleComponents.png"
-            alt="Hi-fi logo preview"
+            alt="Search bar accessibility preview"
             class="flow"
           />
           <p>
-            The search bar is a deceptively simple component. It’s ubiquitous,
-            yet surprisingly inconsistent across platforms when it comes to
-            accessibility. I chose to redesign the search bar component using
-            Nintendo's implementation as a model, with accessibility at the
-            forefront.
+            The search bar is one of the most widely used UI components, yet it
+            varies dramatically in usability and accessibility across
+            applications. For this case study, I compared the search bars on
+            <strong>Spotify</strong>, <strong>Amazon</strong>, and
+            <strong>Nintendo</strong>. Each takes a distinct approach to input
+            types, output states, and feedback.
+          </p>
+          <p>
+            Ultimately, I redesigned Nintendo’s search bar to adopt the clarity
+            and robustness of Amazon’s, while incorporating some of Spotify’s
+            live-feedback behavior—bringing together the best practices into a
+            streamlined and accessible component.
           </p>
         </section>
 
         <section id="input">
           <h2>Input Accessibility</h2>
-          <ul>
-            <li>
-              <strong>Nintendo</strong>: Clean input, clear focus style, full
-              keyboard accessibility
-            </li>
-            <li>
-              <strong>Amazon</strong>: Extensive autocomplete, but keyboard
-              interaction is noisy
-            </li>
-            <li>
-              <strong>Suruga-Ya</strong>: Lacks visual feedback and has
-              inconsistent label structure
-            </li>
-          </ul>
           <p>
-            I compared mouse, keyboard, and mobile interactions across all three
-            and recorded how users can activate, edit, and submit text. The most
-            accessible component was Nintendo’s—each action was predictable and
-            screen reader-friendly.
+            <strong>Spotify:</strong> No explicit submit action required—typing
+            auto-triggers search results. Great for efficiency, but may confuse
+            users expecting to hit Enter. Keyboard focus is visually clear, and
+            arrow key navigation is supported in filters.
           </p>
+          <img
+            src="search-assets/spotify.png"
+            alt="Spotify search input"
+            class="flow"
+          />
+          <p>
+            <strong>Amazon:</strong> Robust autocomplete behavior. The dropdown
+            is keyboard-navigable, and users can use arrow keys to select
+            suggestions. Pressing Enter confirms search. Dropdown includes
+            category picker (e.g., All, Books), increasing flexibility. Strong
+            visual feedback on focus.
+          </p>
+          <img
+            src="search-assets/amazon.png"
+            alt="Amazon search input"
+            class="flow"
+          />
+          <p>
+            <strong>Nintendo:</strong> Simpler interface. Typing shows
+            suggestions, but keyboard-only users must press Enter to confirm
+            search and access filter options later. Focus state lacks strong
+            visual cue. No keyboard shortcut to switch categories without
+            submitting first.
+          </p>
+          <img
+            src="search-assets/nintendo.png"
+            alt="Nintendo search input"
+            class="flow"
+          />
         </section>
 
         <section id="output">
           <h2>Output Accessibility</h2>
-          <p>
-            Nintendo's search bar provides strong feedback: focus outlines,
-            placeholder text, and a visible clear button. Suruga-Ya offers none
-            of these. Screen reader support was also minimal on Suruga-Ya
-            compared to Amazon and Nintendo.
-          </p>
-          <p>
-            Focus order on Nintendo made sense, but Suruga-Ya skipped elements
-            or reordered them, which disrupted keyboard-only navigation.
-          </p>
+          <ul>
+            <li>
+              <strong>Focus Feedback:</strong> Amazon and Spotify both include
+              visible outlines or filled states to indicate when the search bar
+              is active. Nintendo’s is minimal and hard to see.
+            </li>
+            <li>
+              <strong>Suggestions:</strong> Spotify and Amazon both dynamically
+              update suggestions in real-time. Nintendo only updates suggestions
+              after input is paused or Enter is pressed.
+            </li>
+            <li>
+              <strong>Placeholder Text:</strong> All three apps use visible
+              placeholder text. Amazon provides the most contextual guidance.
+            </li>
+            <li>
+              <strong>Screen Readers:</strong> Amazon uses accessible labels and
+              ARIA roles. Nintendo’s implementation is less descriptive—“search
+              bar” is not clearly announced.
+            </li>
+            <li>
+              <strong>Focus Order:</strong> Amazon's tab order flows cleanly
+              from category dropdown → search input → button. Nintendo’s skips
+              over category selection entirely until after submission.
+            </li>
+          </ul>
         </section>
 
         <section id="states">
           <h2>State Models</h2>
           <p>
-            I diagrammed separate state models for mouse and keyboard usage. For
-            instance, the focused state is reached via click or tab key.
-            Autocomplete state activates after 2+ characters typed. Disabled or
-            empty states have distinct visual and screen reader output.
+            Two state models were created to represent current interactions for
+            Nintendo’s search bar, highlighting input events and accessibility
+            gaps.
           </p>
+          <ul>
+            <li>
+              <strong>Mouse User Model:</strong> States include unfocused,
+              hover, focused, text entered, Enter pressed, suggestions shown,
+              and submitted.
+            </li>
+            <li>
+              <strong>Keyboard User Model:</strong> States include Tab in,
+              focused, text entered, suggestions navigated (arrow keys), Enter,
+              and screen reader output.
+            </li>
+          </ul>
           <p>
-            I then revised these state models to optimize clarity for keyboard
-            users and screen readers—for example, allowing ESC to exit
-            autocomplete mode cleanly, or improving how placeholder text is
-            described.
+            Revised models introduce new transitions, including Escape to cancel
+            suggestions, a clear input button navigable via Tab, and improved
+            screen reader feedback per state.
           </p>
+          <img
+            src="search-assets/state-mouse.png"
+            alt="Mouse input state model"
+            class="flow"
+          />
+          <img
+            src="search-assets/state-keyboard.png"
+            alt="Keyboard input state model"
+            class="flow"
+          />
         </section>
 
         <section id="design">
-          <h2>My Redesign</h2>
+          <h2>Redesign</h2>
           <p class="section-description">
-            Final redesigned component using Figma.
+            Final Figma prototype: a more flexible and inclusive Nintendo search
+            bar.
           </p>
           <ul>
-            <li>Announces placeholder and input mode to screen readers</li>
             <li>
-              Has robust keyboard-only support (e.g., arrow keys in suggestions)
+              Dropdown menu for search categories (e.g., Games, Hardware, All)
+              appears <em>before</em> hitting Enter
             </li>
-            <li>Maintains visual focus ring with high contrast</li>
+            <li>Robust focus indicator and high-contrast active state</li>
+            <li>Screen reader announces label, category, and placeholder</li>
+            <li>
+              Keyboard support for category selection and suggestion navigation
+            </li>
           </ul>
           <iframe
-            src="https://embed.figma.com/design/..."
+            src="https://embed.figma.com/design/REPLACE_THIS_WITH_YOUR_LINK"
             allowfullscreen
           ></iframe>
         </section>
@@ -194,15 +257,19 @@
         <section id="reflection">
           <h2>Reflection</h2>
           <p>
-            Designing an accessible component forced me to think in terms of
-            edge cases and non-mouse users. I was inspired by Nintendo’s clarity
-            and disappointed by Suruga-Ya’s ambiguity.
+            This project made me realize how deceptively complex a search bar
+            is—it must communicate its state clearly, support multiple input
+            methods, and adapt across devices. I appreciated Amazon’s emphasis
+            on flexibility, but also saw the value in Spotify’s low-friction
+            design.
           </p>
           <p>
-            The biggest challenge was balancing minimalism with usability—for
-            example, having a visible label might clutter the page, but it's
-            crucial for screen readers. I now recognize that accessibility isn’t
-            an add-on—it’s a core design decision.
+            Nintendo’s version lacked upfront configurability and strong focus
+            states, which I addressed in my redesign. The biggest shift in my
+            thinking came from testing screen reader behavior—making me
+            reconsider visual vs. auditory cues. Accessibility is not just about
+            adding labels, but about designing interactions that make sense
+            across contexts.
           </p>
         </section>
       </div>
@@ -220,7 +287,6 @@
 
       const hamburger = document.getElementById("hamburger-icon");
       const dropdown = document.getElementById("dropdown-menu");
-
       hamburger.addEventListener("click", () => {
         dropdown.classList.toggle("show");
         hamburger.classList.toggle("active");
