@@ -55,7 +55,9 @@
           </button>
         </div>
         <div class="hamburger-menu">
-          <button id="hamburger-icon">☰</button>
+          <button id="hamburger-icon" aria-label="Toggle navigation">
+            <span class="hamburger-lines"></span>
+          </button>
           <div id="dropdown-menu">
             <button
               class="btn-green"
@@ -187,11 +189,13 @@
     </main>
 
     <script>
-      document
-        .getElementById("hamburger-icon")
-        .addEventListener("click", function () {
-          document.getElementById("dropdown-menu").classList.toggle("show");
-        });
+      const hamburger = document.getElementById("hamburger-icon");
+      const dropdown = document.getElementById("dropdown-menu");
+
+      hamburger.addEventListener("click", () => {
+        dropdown.classList.toggle("show");
+        hamburger.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
