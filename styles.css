@@ -150,6 +150,7 @@ header {
   cursor: pointer;
 }
 
+/* DROPDOWN MENU CONTAINER */
 #dropdown-menu {
   display: none;
   flex-direction: column;
@@ -159,15 +160,53 @@ header {
   top: 4rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  z-index: 20;
+  border-radius: 12px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: max-content;
+  min-width: 160px;
 }
 
 #dropdown-menu.show {
   display: flex;
 }
 
-/* Project Section */
+#dropdown-menu button {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  text-align: left;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  margin: 0.25rem 0;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#dropdown-menu .btn-green {
+  background-color: #eef6e5;
+  color: #000;
+}
+#dropdown-menu .btn-green:hover {
+  background-color: #d7eac5;
+}
+
+#dropdown-menu .btn-blue {
+  background-color: #e4f1f9;
+  color: #000;
+}
+#dropdown-menu .btn-blue:hover {
+  background-color: #c7e3f5;
+}
+
+#dropdown-menu .btn-red {
+  background-color: #f9e4e4;
+  color: #000;
+}
+#dropdown-menu .btn-red:hover {
+  background-color: #f5cfcf;
+}
+
 .project-section {
   background-color: rgba(0, 0, 0, 0.7);
   color: white;
