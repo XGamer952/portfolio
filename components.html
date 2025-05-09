@@ -178,6 +178,79 @@
             alt="Nintendo search input"
             class="flow"
           />
+          <h2>Accessibility Input Comparison Table</h2>
+          <table
+            style="
+              background-color: white;
+              border-collapse: collapse;
+              width: 100%;
+            "
+          >
+            <thead>
+              <tr>
+                <th>Input Method</th>
+                <th>Amazon</th>
+                <th>Spotify</th>
+                <th>Nintendo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mouse / Touchpad</strong></td>
+                <td>
+                  - Hover states are distinct<br />
+                  - Search button is always visible and clickable<br />
+                  - Dropdown is clickable and interactive
+                </td>
+                <td>
+                  - Search auto-triggers on type<br />
+                  - No search button visible<br />
+                  - Category tabs are clickable and responsive
+                </td>
+                <td>
+                  - Minimal hover feedback<br />
+                  - No search button visible, must hit Enter or select result<br />
+                  - Filters appear after submit
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Keyboard</strong></td>
+                <td>
+                  - Tab through dropdown, input, and button<br />
+                  - Arrow keys navigate autocomplete<br />
+                  - Clear focus state with highlight
+                </td>
+                <td>
+                  - Tab to input<br />
+                  - Arrow keys navigate filters<br />
+                  - No clear keyboard path to submit search
+                </td>
+                <td>
+                  - Tab focuses input<br />
+                  - No visible search button to trigger with Space/Enter<br />
+                  - Must hit Enter to submit, can't change filter beforehand
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Touch</strong></td>
+                <td>
+                  - Tappable dropdown and input<br />
+                  - Works well on mobile layouts<br />
+                  - Suggestions can be tapped directly
+                </td>
+                <td>
+                  - Efficient for fast searches<br />
+                  - Tapping results navigates instantly<br />
+                  - Filters require horizontal scroll
+                </td>
+                <td>
+                  - Basic input field is tappable<br />
+                  - No category picker until after search<br />
+                  - Results shown after submission
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section id="output">
@@ -208,6 +281,84 @@
               over category selection entirely until after submission.
             </li>
           </ul>
+          <h2>Accessibility Output Comparison Table</h2>
+          <table
+            style="
+              background-color: white;
+              border-collapse: collapse;
+              width: 100%;
+            "
+          >
+            <thead>
+              <tr>
+                <th style="border: 1px solid #ccc; padding: 12px">
+                  Output Type
+                </th>
+                <th style="border: 1px solid #ccc; padding: 12px">Amazon</th>
+                <th style="border: 1px solid #ccc; padding: 12px">Spotify</th>
+                <th style="border: 1px solid #ccc; padding: 12px">Nintendo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  <strong>Focus Feedback</strong>
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Visible outline around input and dropdown; button highlights
+                  on hover
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Input bar highlights when focused; tab headers change state
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Thin red underline appears, but hard to detect visually
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  <strong>Suggestions</strong>
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Autofill dropdown updates as you type
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Search results update dynamically underneath
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Suggestions show only after you pause or press Enter
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  <strong>Screen Reader Cues</strong>
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  ARIA roles for input, button, and dropdown; clear labels
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Search input is labeled, and filters are announced
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Limited feedback; unclear labeling; dropdown not described
+                </td>
+              </tr>
+              <tr>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  <strong>Focus Order</strong>
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Category → input → button (logical)
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Input → filters (reasonable)
+                </td>
+                <td style="border: 1px solid #ccc; padding: 12px">
+                  Input → must submit before category appears
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section id="states">
