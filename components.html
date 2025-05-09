@@ -128,6 +128,21 @@
 
         <section id="input">
           <h2>Input Accessibility</h2>
+          <img
+            src="component-assets/spotify-search.png"
+            alt="Spotify search bar"
+            class="flow"
+          />
+          <img
+            src="component-assets/amazon-search.png"
+            alt="Amazon search input"
+            class="flow"
+          />
+          <img
+            src="component-assets/nintendo-search.png"
+            alt="Nintendo search input"
+            class="flow"
+          />
           <p>
             <strong>Spotify:</strong> No explicit submit action required—typing
             auto-triggers search results. Great for efficiency, but may confuse
@@ -135,7 +150,7 @@
             arrow key navigation is supported in filters.
           </p>
           <img
-            src="search-assets/spotify.png"
+            src="component-assets/spotify-full.png"
             alt="Spotify search input"
             class="flow"
           />
@@ -147,7 +162,7 @@
             visual feedback on focus.
           </p>
           <img
-            src="search-assets/amazon.png"
+            src="component-assets/amazon-full.png"
             alt="Amazon search input"
             class="flow"
           />
@@ -159,7 +174,7 @@
             submitting first.
           </p>
           <img
-            src="search-assets/nintendo.png"
+            src="component-assets/nintendo-full.png"
             alt="Nintendo search input"
             class="flow"
           />
@@ -198,35 +213,56 @@
         <section id="states">
           <h2>State Models</h2>
           <p>
-            Two state models were created to represent current interactions for
-            Nintendo’s search bar, highlighting input events and accessibility
-            gaps.
+            I diagrammed both the original Nintendo search bar states and my
+            redesigned search bar states for both mouse and keyboard users.
+            These state models helped me analyze how users interact with the
+            component across input methods—and where breakdowns in clarity,
+            accessibility, and flexibility occur.
           </p>
-          <ul>
-            <li>
-              <strong>Mouse User Model:</strong> States include unfocused,
-              hover, focused, text entered, Enter pressed, suggestions shown,
-              and submitted.
-            </li>
-            <li>
-              <strong>Keyboard User Model:</strong> States include Tab in,
-              focused, text entered, suggestions navigated (arrow keys), Enter,
-              and screen reader output.
-            </li>
-          </ul>
+
+          <h3>Nintendo’s State Models</h3>
           <p>
-            Revised models introduce new transitions, including Escape to cancel
-            suggestions, a clear input button navigable via Tab, and improved
-            screen reader feedback per state.
+            The default Nintendo search bar is fast but limited: there’s no way
+            to select a category before searching, and keyboard users don’t
+            receive strong focus feedback. There’s also no visible search
+            button, meaning mouse users have to rely on Enter or clicking a
+            suggestion.
           </p>
           <img
-            src="search-assets/state-mouse.png"
-            alt="Mouse input state model"
+            src="component-assets/nintendo-mouse.png"
+            alt="Nintendo search bar state model for mouse users"
             class="flow"
           />
           <img
-            src="search-assets/state-keyboard.png"
-            alt="Keyboard input state model"
+            src="component-assets/nintendo-keyboard.png"
+            alt="Nintendo search bar state model for keyboard users"
+            class="flow"
+          />
+
+          <h3>My Redesigned State Models</h3>
+          <p>
+            In my redesign, I introduced a dropdown menu for selecting
+            categories (e.g., All, Games, Hardware). This adds clarity and
+            upfront control, but introduces an intentional tradeoff: slightly
+            more effort for keyboard users, as they now must Tab through an
+            additional option. However, this improves learnability and
+            flexibility—especially for screen reader users, who can now hear the
+            selected category before submitting.
+          </p>
+          <p>
+            The focus states are now clearly outlined with a red border, giving
+            visual confirmation across input modes. I also added keyboard
+            navigability for the dropdown and maintained Enter/Click activation
+            options for both keyboard and mouse users.
+          </p>
+          <img
+            src="component-assets/my-mouse.png"
+            alt="My redesigned search bar state model for mouse users"
+            class="flow"
+          />
+          <img
+            src="component-assets/my-keyboard.png"
+            alt="My redesigned search bar state model for keyboard users"
             class="flow"
           />
         </section>
@@ -234,23 +270,39 @@
         <section id="design">
           <h2>Redesign</h2>
           <p class="section-description">
-            Final Figma prototype: a more flexible and inclusive Nintendo search
-            bar.
+            Final Figma redesign of the Nintendo search bar component.
           </p>
           <ul>
             <li>
-              Dropdown menu for search categories (e.g., Games, Hardware, All)
-              appears <em>before</em> hitting Enter
+              Added a category dropdown that can be selected
+              <strong>before</strong> submission—mirroring Amazon's flexibility
             </li>
-            <li>Robust focus indicator and high-contrast active state</li>
-            <li>Screen reader announces label, category, and placeholder</li>
             <li>
-              Keyboard support for category selection and suggestion navigation
+              High-contrast red border makes focus state obvious for all users
+            </li>
+            <li>
+              Introduced a <strong>visible search button</strong> to support
+              mouse users who may not want to press Enter
+            </li>
+            <li>
+              Designed for full keyboard accessibility—dropdown and input are
+              Tab-able, and Enter triggers search
+            </li>
+            <li>
+              Improved clarity for screen readers with proper labeling and ARIA
+              descriptions
             </li>
           </ul>
+          <p>
+            This redesign favors clarity and control over minimalism—an
+            intentional tradeoff. While the additional dropdown and focus styles
+            introduce more steps and visual weight, they make the component far
+            more accessible, especially for new users or those relying on
+            assistive technologies.
+          </p>
           <img
             src="component-assets/figma-redesign.png"
-            alt="Redesigned search bar"
+            alt="Final Figma redesign of the Nintendo search bar"
             class="flow"
           />
         </section>
