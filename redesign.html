@@ -112,17 +112,21 @@
       <nav id="side-nav">
         <a href="#intro" onclick="toggleSideNav()">Introduction</a>
         <a href="#problem" onclick="toggleSideNav()">Identifying Issues</a>
+        <a href="#analysis" onclick="toggleSideNav()"
+          >Accessibility & Analysis</a
+        >
         <a href="#style" onclick="toggleSideNav()">Visual Style Guide</a>
         <a href="#mockups" onclick="toggleSideNav()">Hi-Fi Mockups</a>
         <a href="#live" onclick="toggleSideNav()">Live Redesign</a>
+        <a href="#reflection" onclick="toggleSideNav()">Reflection</a>
       </nav>
 
       <div class="case-study-content">
         <section id="intro">
           <h1>Responsive Redesign</h1>
           <p class="section-description">
-            Transforming poorly-designed websites with a responsive new coat of
-            paint.
+            Transforming a public website with increased clarity, usability, and
+            modern accessibility.
           </p>
           <img
             src="assets/ResponsiveRedesign.png"
@@ -130,55 +134,125 @@
             class="flow"
           />
           <p>
-            The original website for
+            I chose to redesign the website for
             <a href="https://www.pnwx.com/" target="_blank"
               >Pacific Northwest X-Ray Inc.</a
             >
-            had a layout stuck in the early 2000s: cramped content, inconsistent
-            alignment, low color contrast, and a cluttered shopping interface.
+            because it's publicly accessible, not particularly popular, and has
+            a very jarring and inaccessible design.
           </p>
           <p>
-            I chose to redesign it to focus on clean hierarchy, mobile
-            responsiveness, modern accessibility, and a patient-friendly
-            shopping experience. You can view the final site
+            The original website suffers from severe usability issues: dated
+            visuals, low color contrast, inconsistent layout, and a lack of
+            responsive design.
+          </p>
+          <p>
+            My
             <a
               href="https://xgamer952.github.io/redesigned-website/"
               target="_blank"
-              >here</a
-            >.
+              >redesign</a
+            >
+            focuses on clear visual hierarchy, mobile-first responsiveness, and
+            a smoother shopping experience.
           </p>
         </section>
+
+        <div class="external-links">
+          <a
+            href="https://www.pnwx.com/"
+            target="_blank"
+            class="btn-link btn-original"
+            >View Original Website</a
+          >
+          <a
+            href="https://xgamer952.github.io/redesigned-website/"
+            target="_blank"
+            class="btn-link btn-redesign"
+            >View Redesigned Website</a
+          >
+        </div>
 
         <section id="problem">
           <h2>Identifying Issues</h2>
           <ul>
+            <li>Poor contrast (e.g., gold text on white background)</li>
+            <li>Text-heavy layout with minimal visual breaks</li>
+            <li>Redundant navigation paths and unclear labels</li>
+            <li>No responsiveness: site breaks entirely on mobile</li>
             <li>
-              Small fonts and very low color contrast (especially gold text on
-              white)
+              Unclear visual hierarchy, mixed font sizes, and inconsistent
+              margins
             </li>
-            <li>No responsive layout—mobile view was completely broken</li>
-            <li>
-              Redundant buttons (e.g., "Browse Products" and “Equipment” go to
-              the same place)
-            </li>
-            <li>
-              Inconsistent spacing and alignment of sections, images, and
-              typography
-            </li>
-            <li>Dense blocks of text and too many competing focal points</li>
           </ul>
+          <img
+            src="redesign-assets/original-website.png"
+            alt="Original website screenshot"
+            class="flow"
+          />
+        </section>
+
+        <section id="analysis">
+          <h2>Accessibility & Heuristic Analysis</h2>
+          <p>
+            Using
+            <a href="https://wave.webaim.org/" target="_blank">WebAIM WAVE</a>,
+            I discovered several accessibility flaws:
+          </p>
+          <ul>
+            <li>Missing or improper alt text on images</li>
+            <li>Low color contrast on key buttons and navigation text</li>
+            <li>Improper heading structure disrupting screen reader flow</li>
+            <li>Redundant or empty links contributing to confusion</li>
+          </ul>
+          <img
+            src="redesign-assets/wave-error.png"
+            alt="WAVE analysis of original website"
+            class="flow"
+          />
+          <p>
+            These issues severely impacted efficiency and learnability. Users on
+            mobile or with assistive tools would find the interface frustrating
+            or even unusable.
+          </p>
         </section>
 
         <section id="style">
           <h2>Visual Style Guide</h2>
-          <p class="section-description">
-            Based on a redesigned layout using Figma
-          </p>
           <p>
-            I created a style guide to guide the redesign, with a custom logo,
-            updated colors, consistent font scale, and button states. These
-            established hierarchy and clarity across screen sizes.
+            The style guide ensures consistency and accessibility throughout the
+            redesign. Each section was carefully developed in Figma with
+            reusability in mind:
           </p>
+          <ul>
+            <li>
+              <strong>Logos:</strong> Custom logo redesign for clarity and
+              visual branding. Retained legacy imagery where helpful.
+            </li>
+            <li>
+              <strong>Buttons:</strong> Designed both default and hover states
+              for clarity, with large touch targets and accessible color
+              contrast.
+            </li>
+            <li>
+              <strong>Color Palette:</strong> Dark teal and blue provide
+              contrast and consistency. Gold and light grey are used as
+              secondary highlights.
+            </li>
+            <li>
+              <strong>Text Styles:</strong> Uses Arial for readability with a
+              clear type scale from headings to captions. Font sizes ensure
+              readability across screen sizes.
+            </li>
+            <li>
+              <strong>Icons:</strong> Clean vector icons for search and shopping
+              cart increase scanability and usability.
+            </li>
+            <li>
+              <strong>Controls:</strong> Search bar styled for clear
+              interaction, with placeholder text and dropdown support.
+            </li>
+          </ul>
           <img
             src="redesign-assets/style-guide.png"
             alt="Style Guide"
@@ -187,14 +261,31 @@
         </section>
 
         <section id="mockups">
-          <h2>Mockups</h2>
-          <p class="section-description">
-            Responsive mockup annotated for clarity
-          </p>
+          <h2>Hi-Fidelity Mockups</h2>
           <p>
-            This single annotated mockup consolidates the three views to show
-            how layout, spacing, and navigation behave across device types.
+            The design accommodates desktop, tablet, and mobile screens.
+            Elements resize, reposition, or collapse fluidly across breakpoints:
           </p>
+          <ul>
+            <li>
+              <strong>Layout Strategy:</strong> Used CSS Grid for the header and
+              Flexbox for product listings. Navigation collapses into a single
+              row on smaller screens.
+            </li>
+            <li>
+              <strong>Spacing & Typography:</strong> Margins and padding adjust
+              to maintain readable white space. Text resizes slightly between
+              breakpoints.
+            </li>
+            <li>
+              <strong>Responsiveness:</strong> Image gallery stacks vertically
+              on mobile, with full-width buttons for accessibility.
+            </li>
+            <li>
+              <strong>Annotated Details:</strong> Font sizes, max-widths, and
+              layout behaviors are documented in the Figma file for each view.
+            </li>
+          </ul>
           <img
             src="redesign-assets/mockups.png"
             alt="Annotated mockups"
@@ -204,24 +295,29 @@
 
         <section id="live">
           <h2>Live Redesign</h2>
-          <p>
-            View the finished version here:
-            <a
-              href="https://xgamer952.github.io/redesigned-website/"
-              target="_blank"
-              >xgamer952.github.io/redesigned-website</a
-            >
-          </p>
+          <p>View the redesigned site in action:</p>
+          <a
+            href="https://xgamer952.github.io/redesigned-website/"
+            target="_blank"
+            class="btn-link btn-redesign live-link"
+            >View the Redesigned Website</a
+          >
           <div class="responsive-pair">
-            <img
-              src="redesign-assets/desktop.png"
-              alt="Redesigned desktop screenshot"
-            />
-            <img
-              src="redesign-assets/mobile.png"
-              alt="Redesigned mobile screenshot"
-            />
+            <img src="redesign-assets/desktop.png" alt="Desktop view" />
+            <img src="redesign-assets/mobile.png" alt="Mobile view" />
           </div>
+        </section>
+
+        <section id="reflection">
+          <h2>Reflection & Takeaways</h2>
+          <p>
+            This project taught me how to design with accessibility and
+            responsiveness in mind from the beginning. Creating annotated
+            mockups and a reusable style system made implementation smoother and
+            allowed for cleaner, more maintainable code. Testing responsiveness
+            with browser tools and feedback from peers helped ensure the design
+            felt natural across devices.
+          </p>
         </section>
       </div>
     </main>
@@ -238,7 +334,6 @@
 
       const hamburger = document.getElementById("hamburger-icon");
       const dropdown = document.getElementById("dropdown-menu");
-
       hamburger.addEventListener("click", () => {
         dropdown.classList.toggle("show");
         hamburger.classList.toggle("active");
