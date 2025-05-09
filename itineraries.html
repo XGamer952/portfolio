@@ -128,32 +128,54 @@
           </p>
           <img
             src="assets/IterativeDesign.png"
-            alt="Hi-fi logo preview"
+            alt="Project visual"
             class="flow"
           />
           <p>
-            Partiful is the premier Event & Party RSVP platform. But its current
-            interface didn’t support hosts planning multi-part events like
-            weekend trips or bar crawls...
+            Partiful is a popular platform for hosting and RSVPing to events,
+            especially parties. But one major limitation was its inability to
+            support multi-part events—things like bar crawls, day trips, or
+            weekend getaways with multiple activities.
           </p>
-          <img
-            src="itinerary-assets/goal.png"
-            alt="Design goal image"
-            class="flow"
-          />
           <p>
-            <strong>Goal:</strong> Create a smooth, intuitive multi-part
-            interface that feels like Partiful—fun, fast, and easy.
+            This project tackled the design of a flexible itinerary feature that
+            let hosts create and manage multipart events intuitively—while still
+            feeling as seamless and delightful as Partiful’s brand promises.
+          </p>
+          <img src="itinerary-assets/goal.png" alt="Design goal" class="flow" />
+          <p>
+            <strong>Goal:</strong> Design a flexible, fun, and frictionless
+            interface for planning events with multiple sub-events, without
+            overwhelming either hosts or guests.
           </p>
         </section>
 
         <section id="approach">
           <h2>Approach</h2>
           <p>
-            We started with interviews and storyboarding, then built out design
-            flows, low-fi mockups, and high-fidelity prototypes—constantly
-            refining with feedback.
+            We used a human-centered iterative design process, involving
+            interviews, storyboarding, sketching, wireframing, testing, and
+            refinement. We worked in a team of two and constantly checked
+            designs against user needs and Partiful’s voice.
           </p>
+          <ul>
+            <li>
+              <strong>User Research:</strong> Interviews with active Partiful
+              users and event planners
+            </li>
+            <li>
+              <strong>Storyboarding:</strong> Key user flows and edge case
+              planning
+            </li>
+            <li>
+              <strong>Prototyping:</strong> Multiple iterations of low- and
+              hi-fi mockups
+            </li>
+            <li>
+              <strong>Feedback:</strong> Sessions with PMs, designers, and the
+              Partiful team
+            </li>
+          </ul>
           <img
             src="itinerary-assets/approach.png"
             alt="Workflow diagram"
@@ -164,18 +186,14 @@
         <section id="sketches">
           <h2>Sketches</h2>
           <p class="section-description">
-            We explored RSVP flows, creation options, visibility settings, and
-            layout logic to meet real user needs.
+            Early ideation explored RSVP logic, mobile layouts, subevent
+            privacy, and creation flows.
           </p>
-          <ul>
-            <li>Should guests RSVP to subevents individually?</li>
-            <li>
-              How do we let hosts create multiparts easily, without confusion?
-            </li>
-            <li>
-              What’s the cleanest way to show multiple subevents on mobile?
-            </li>
-          </ul>
+          <p>
+            We asked ourselves: Should guests RSVP to each part of an event? Can
+            hosts easily create subevents on mobile? How should private or
+            invite-only subevents be displayed?
+          </p>
           <img
             src="itinerary-assets/sketch-annotations-1.png"
             class="sketch-img"
@@ -193,12 +211,13 @@
         <section id="wireframes">
           <h2>Wireframes</h2>
           <p class="section-description">
-            We tested guest and host experiences with lo-fi mockups in Balsamiq.
+            We built low-fidelity wireframes in Balsamiq and ran testing
+            sessions to validate flows.
           </p>
           <ul>
-            <li>RSVP once or RSVP per subevent?</li>
-            <li>Host creation flows with +add buttons</li>
-            <li>Comment threads and photos scoped to specific subevents</li>
+            <li>One-page vs multi-page subevent creation</li>
+            <li>Per-event RSVP toggles and default RSVP-all option</li>
+            <li>Comment and photo feeds scoped to each subevent</li>
           </ul>
           <img
             src="itinerary-assets/balsamiq-invited.png"
@@ -210,26 +229,32 @@
         <section id="feedback">
           <h2>Feedback</h2>
           <p class="section-description">
-            We received guidance from Partiful’s product designer and other
-            experienced PMs and researchers.
+            Throughout the process, we sought critique from industry designers
+            and iterated fast.
           </p>
           <ul>
-            <li>Make subevents feel additive—not like separate pages</li>
-            <li>Keep things simple with clear defaults (e.g., RSVP to all)</li>
-            <li>Support private subevents and per-event tagging</li>
+            <li>
+              "Let RSVP be simple by default, with more control tucked away for
+              advanced users"
+            </li>
+            <li>
+              "Avoid making each subevent feel like a standalone page—make it
+              feel like a scrollable story"
+            </li>
+            <li>"Keep the party vibe. Don’t overengineer it."</li>
           </ul>
         </section>
 
         <section id="hifi">
           <h2>Hi-Fi Prototype</h2>
           <p class="section-description">
-            Our final Figma prototype emphasized a party-forward look with
-            multi-part flexibility.
+            The final design balances fun and functionality. Hosts can add parts
+            easily. Guests can RSVP per part or all at once.
           </p>
           <ul>
-            <li>One page, scrollable itinerary</li>
-            <li>Per-subevent RSVP options</li>
-            <li>Clean, mobile-first layouts</li>
+            <li>Timeline-style scroll with anchored headers per subevent</li>
+            <li>Mobile-first layout with responsive design principles</li>
+            <li>Clear RSVP indicators and editable privacy settings</li>
           </ul>
           <iframe
             src="https://embed.figma.com/design/FZJtMhJRIx3JmZXs4RNtis/Partiful-Itineraries?node-id=4252-12427&embed-host=share"
@@ -240,12 +265,14 @@
         <section id="conclusion">
           <h2>Conclusion</h2>
           <p>
-            We built a polished experience that supports how real people
-            party—with room to grow.
+            We designed a scalable itinerary feature for Partiful that maintains
+            the product’s magic while solving real host frustrations. The
+            flexible structure supports everything from chill dinners to
+            multi-day festivals.
           </p>
           <p>
-            Next steps could include edge case testing, RSVP summaries, and
-            integrations with sharing/maps/polls.
+            <strong>Next steps:</strong> Test with live users, refine edge
+            cases, add RSVP summaries, and explore poll/map integration.
           </p>
           <img src="itinerary-assets/graveyard.png" class="flow" />
         </section>
@@ -264,7 +291,6 @@
 
       const hamburger = document.getElementById("hamburger-icon");
       const dropdown = document.getElementById("dropdown-menu");
-
       hamburger.addEventListener("click", () => {
         dropdown.classList.toggle("show");
         hamburger.classList.toggle("active");
