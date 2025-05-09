@@ -204,3 +204,47 @@ td {
 th {
   font-weight: bold;
 }
+
+.persona-block {
+  max-width: 1000px;
+  margin: 0 auto 4rem auto;
+  font-family: "IBM Plex Mono", sans-serif;
+}
+
+.persona-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.persona-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.persona-subtitle {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.persona-card {
+  background: #f8f8ff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.persona-card h3 {
+  color: #6b4eff;
+  margin-bottom: 0.5rem;
+}

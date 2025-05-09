@@ -121,118 +121,330 @@
         <section id="intro">
           <h1>Personas & Storyboarding</h1>
           <p class="section-description">
-            Empathizing with elevator users to design better vertical
-            experiences.
+            Investigating everyday access through the Greg A elevator system.
           </p>
+          <img
+            src="assets/PersonasStoryboarding.png"
+            alt="Personas Storyboarding preview"
+            class="flow"
+          />
           <p>
-            This project aimed to understand real-life user interactions with
-            elevators, a common yet often overlooked public interface. Through
-            contextual inquiry, interviews, and storyboarding, I examined how
-            people navigate elevators and the pain points they encounter along
-            the way.
+            The Greg A elevator at Brown University requires a swipe of a Brown
+            ID card to both call the elevator and to select a floor once inside.
+            While the system is reliable, students frequently express
+            frustration about the inconvenience—especially when their hands are
+            full or their ID is buried in a pocket. In this case study, I
+            observed users, conducted interviews, developed personas, and
+            created a storyboard to capture the full range of elevator
+            interactions.
           </p>
         </section>
 
         <section id="observations">
-          <h2>Observations</h2>
+          <h2>Sketch & Interview Summary</h2>
+          <img
+            src="persona-assets/sketch.png"
+            alt="Sketch of elevator interface"
+            class="flow"
+          />
           <p>
-            I observed and interviewed three users. Common behaviors included:
+            I observed students entering the Greg A elevator and documented
+            their interactions. Most showed signs of impatience, especially when
+            juggling items or waiting on slow door closures. Many were familiar
+            with the process, but found it cumbersome nonetheless. I also
+            interviewed three users.
           </p>
-          <ul>
-            <li>
-              Uncertainty when the elevator interface offered multiple sets of
-              buttons (e.g., lobby panel vs. inside)
-            </li>
-            <li>
-              Confusion about confirmation when a button press registered (no
-              sound/lighting feedback)
-            </li>
-            <li>
-              Hesitation when sharing an elevator with others or during crowded
-              use
-            </li>
-          </ul>
-          <p>Interview questions included:</p>
-          <ol>
-            <li>
-              What’s the first thing you look for when you approach an elevator?
-            </li>
-            <li>Have you ever had trouble getting an elevator to respond?</li>
-            <li>What frustrates you most about using elevators?</li>
-          </ol>
-          <p>
-            Most responses centered on lack of feedback, unclear signage, and
-            anxiety about missing their floor or pressing the wrong button.
-          </p>
+
+          <table
+            style="
+              background-color: white;
+              border-collapse: collapse;
+              width: 100%;
+            "
+          >
+            <thead>
+              <tr>
+                <th>Question</th>
+                <th>User 1</th>
+                <th>User 2</th>
+                <th>User 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>What do you do when you first approach the elevator?</td>
+                <td>Swipe immediately, already thinking about next task.</td>
+                <td>Usually pause to check if it’s already open.</td>
+                <td>Look around to make sure I’m using it correctly.</td>
+              </tr>
+              <tr>
+                <td>Was anything confusing about the interface?</td>
+                <td>Not really, just annoying that I have to swipe twice.</td>
+                <td>I didn’t realize at first I had to swipe again inside.</td>
+                <td>
+                  I still sometimes forget which side to swipe or what to press
+                  first.
+                </td>
+              </tr>
+              <tr>
+                <td>How difficult was the process?</td>
+                <td>Easy, but slow when I’m carrying stuff.</td>
+                <td>
+                  Fine now, but weird at first compared to freshman dorms.
+                </td>
+                <td>Still a bit stressful. I take the stairs if I can.</td>
+              </tr>
+              <tr>
+                <td>Would you change anything about it?</td>
+                <td>
+                  Get rid of the double swipe. Just let me press the floor.
+                </td>
+                <td>Maybe clearer light/sound feedback for when it works.</td>
+                <td>Put signs near the reader explaining how it works.</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section id="personas">
-          <h2>Personas</h2>
-          <h3>1. Jordan – The Anxious Newcomer</h3>
-          <ul>
-            <li><strong>Think:</strong> “What if I press the wrong button?”</li>
-            <li>
-              <strong>Feel:</strong> Nervous in shared elevator spaces, easily
-              overwhelmed
-            </li>
-            <li>
-              <strong>Say:</strong> “I wish it gave a sound or something when I
-              press!”
-            </li>
-            <li>
-              <strong>Do:</strong> Double-presses the button and checks signage
-              multiple times
-            </li>
-          </ul>
-          <p>
-            <strong>Description:</strong> Jordan is a college student new to
-            campus housing and unsure of elevator etiquette or norms...
-          </p>
+          <h2>User Personas</h2>
 
-          <h3>2. Denise – The Busy Professional</h3>
-          <ul>
-            <li><strong>Think:</strong> “Why is this taking so long?”</li>
-            <li>
-              <strong>Feel:</strong> Frustrated by inefficiency and unclear UX
-            </li>
-            <li>
-              <strong>Say:</strong> “Why are there two panels—am I supposed to
-              use both?”
-            </li>
-            <li>
-              <strong>Do:</strong> Rapidly presses close door, glances at watch
-              often
-            </li>
-          </ul>
-          <p>
-            <strong>Description:</strong> Denise is an office worker who uses
-            the elevator system multiple times a day...
-          </p>
-        </section>
+          <div class="persona-block">
+            <div class="persona-header">
+              <img
+                src="persona-assets/sam.png"
+                alt="Speedster Sam"
+                class="persona-icon"
+              />
+              <div>
+                <h2>Speedster Sam</h2>
+                <p class="persona-subtitle">
+                  The efficiency-minded senior who doesn’t like to wait
+                </p>
+              </div>
+            </div>
+
+            <p>
+              <strong>Bio:</strong> Sam is a 22-year-old senior who’s lived in
+              the dorms for years and is deeply familiar with Greg A’s layout.
+              He often carries groceries or gear from class, and finds the
+              double-swipe requirement tedious—especially when he’s holding
+              things. He values speed and hates repetitive friction.
+            </p>
+            <p>
+              <strong>Interface Problems:</strong> Sam is frustrated by the
+              required ID swipes both outside and inside the elevator. He often
+              wishes the elevator just knew which floor he wanted without
+              needing interaction.
+            </p>
+
+            <div class="persona-grid">
+              <div class="persona-card">
+                <h3>Thinks</h3>
+                <ul>
+                  <li>
+                    “I’ve done this a hundred times—why do I still need to swipe
+                    twice?”
+                  </li>
+                  <li>“This door takes forever to close...”</li>
+                  <li>“Wish I could just get to my floor instantly.”</li>
+                  <li>
+                    “There should be a smart memory system for regular users.”
+                  </li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Feels</h3>
+                <ul>
+                  <li>Impatient when holding items</li>
+                  <li>Annoyed by repeated authentication</li>
+                  <li>Confident in knowing how things work</li>
+                  <li>Frustrated when others slow down the process</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Says</h3>
+                <ul>
+                  <li>“Let me in already!”</li>
+                  <li>“Ugh, forgot my card again.”</li>
+                  <li>“Come on, close the doors!”</li>
+                  <li>“I could’ve been up the stairs already.”</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Does</h3>
+                <ul>
+                  <li>Swipes quickly and forcefully</li>
+                  <li>Presses close-door repeatedly</li>
+                  <li>Sometimes takes stairs to avoid delay</li>
+                  <li>Rushes into elevator without waiting for others</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="persona-block">
+            <div class="persona-header">
+              <img
+                src="persona-assets/chloe.png"
+                alt="Chill Chloe"
+                class="persona-icon"
+              />
+              <div>
+                <h2>Chill Chloe</h2>
+                <p class="persona-subtitle">
+                  The laid-back sophomore who’s found her rhythm
+                </p>
+              </div>
+            </div>
+
+            <p>
+              <strong>Bio:</strong> Chloe is a sophomore living in Greg A after
+              a year in freshman dorms. At first, she was intimidated by the ID
+              swipe system and didn’t want to hold up the line. Over time, she’s
+              become comfortable with the process and now navigates it at her
+              own pace, rarely in a rush.
+            </p>
+            <p>
+              <strong>Interface Problems:</strong> Chloe occasionally forgets
+              her card or mixes up which panel to swipe. She wishes there were
+              clearer indicators about what comes next in the process, but
+              overall has adapted to the system with few complaints.
+            </p>
+
+            <div class="persona-grid">
+              <div class="persona-card">
+                <h3>Thinks</h3>
+                <ul>
+                  <li>“Did I swipe already?”</li>
+                  <li>“I hope the elevator’s not full…”</li>
+                  <li>“Is it this panel or the one inside?”</li>
+                  <li>“I’ll just wait until it opens up again.”</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Feels</h3>
+                <ul>
+                  <li>Calm unless rushed</li>
+                  <li>Slightly unsure of the sequence at times</li>
+                  <li>Comfortable asking for help</li>
+                  <li>Neutral toward the interface speed</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Says</h3>
+                <ul>
+                  <li>“I think I forgot my card upstairs.”</li>
+                  <li>“Go ahead, I’m not in a rush.”</li>
+                  <li>“Wait, which one do I swipe?”</li>
+                  <li>“Oh, it opened. Cool.”</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Does</h3>
+                <ul>
+                  <li>Waits patiently in front of the elevator</li>
+                  <li>Holds the door open for others</li>
+                  <li>Sometimes double-checks her card swipe</li>
+                  <li>Lets the elevator go if she misses it</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="persona-block">
+            <div class="persona-header">
+              <img src="persona-assets/natalie.png" alt="Nervous Natalie" class="persona-icon" />
+              <div>
+                <h2>Nervous Natalie</h2>
+                <p class="persona-subtitle">The cautious transfer student trying to fit in</p>
+              </div>
+            </div>
+          
+            <p><strong>Bio:</strong> Natalie is a junior transfer student who recently moved into Greg A. She’s still learning the dorm’s systems and feels self-conscious when using the elevator, especially when others are around. She double-checks her actions often and is afraid of doing something wrong.</p>
+            <p><strong>Interface Problems:</strong> Natalie finds the lack of guidance on when and where to swipe stressful. She hesitates before interacting with the interface and wishes there were clearer signals or feedback to confirm her actions.</p>
+          
+            <div class="persona-grid">
+              <div class="persona-card">
+                <h3>Thinks</h3>
+                <ul>
+                  <li>“Everyone’s watching me...”</li>
+                  <li>“Did it register my swipe?”</li>
+                  <li>“Am I supposed to swipe again?”</li>
+                  <li>“I hope I don’t mess this up.”</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Feels</h3>
+                <ul>
+                  <li>Nervous about making mistakes</li>
+                  <li>Uncertain about the sequence of actions</li>
+                  <li>Embarrassed if others are waiting</li>
+                  <li>Overwhelmed by unclear instructions</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Says</h3>
+                <ul>
+                  <li>“Sorry, is this the right panel?”</li>
+                  <li>“You can go ahead of me.”</li>
+                  <li>“I think I did it wrong.”</li>
+                  <li>“I’m still learning how this works.”</li>
+                </ul>
+              </div>
+              <div class="persona-card">
+                <h3>Does</h3>
+                <ul>
+                  <li>Waits for someone else to go first</li>
+                  <li>Swipes card twice just in case</li>
+                  <li>Steps back when unsure what to do</li>
+                  <li>Frequently looks for signage or feedback</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
 
         <section id="storyboard">
-          <h2>Storyboard</h2>
+          <h2>Storyboard: Speedster Sam’s Journey</h2>
           <p class="section-description">
-            A day in the life of Jordan navigating the dorm elevator
+            Sam is returning to his dorm from the gym, juggling his bag, water
+            bottle, and keys. He’s used to the elevator, but he’s in a hurry and
+            doesn’t want any delays.
           </p>
           <img
-            src="assets/PersonasStoryboarding.png"
-            alt="Elevator storyboard"
+            src="persona-assets/storyboard.png"
+            alt="Storyboard for Speedster Sam"
             class="flow"
           />
+          <p>
+            The storyboard follows Sam from hallway approach to elevator entry,
+            revealing minor friction at each stage—fumbling for his card,
+            waiting for doors to close, re-swiping to select a floor, and
+            tapping the button multiple times. While the elevator is familiar to
+            him, the repetition and lack of streamlining make every second feel
+            longer.
+          </p>
         </section>
 
         <section id="reflection">
           <h2>Reflection</h2>
           <p>
-            I learned that even mundane interfaces like elevators contain
-            emotional tension—especially for newcomers or people with
-            accessibility needs. Designing for feedback, clarity, and social
-            comfort can go a long way.
+            This case study helped me realize that even highly functional
+            systems like the Greg A elevator can create unnecessary friction for
+            users when interaction patterns aren't streamlined. A reliable
+            elevator is great, but requiring multiple swipes to perform a simple
+            task adds cognitive and physical load—especially when users are
+            carrying bags, in a hurry, or unfamiliar with the building.
           </p>
           <p>
-            I’d like to explore UI alternatives like light and sound indicators
-            or even voice-assisted guidance for greater confidence.
+            By designing personas across a spectrum of user experience—from
+            confident to cautious—I better understood how invisible barriers
+            form even in everyday tasks. The changes I would advocate for
+            include clearer instructional signage, visual/sound feedback after
+            swipes, and a reconsideration of double-authentication. These
+            changes aim to reduce mismatches between user expectations and
+            system behavior, following Kat Holmes’ framing of inclusive design.
           </p>
         </section>
       </div>
